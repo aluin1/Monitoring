@@ -1,0 +1,90 @@
+/* Your app custom files in this file */
+/* Tab bar icons */
+i.tabbar-home {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/home.png);
+}
+ i.tabbar-exit{
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/exit.png);
+}
+ 
+i.tabbar-demo-icon-1 {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/icon_survey_off.png);
+}
+.active i.tabbar-demo-icon-1 {
+	width: 30px;
+  height: 30px;
+  background-image:url(../icon/icon_survey.png);
+}
+i.tabbar-demo-icon-2 {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/icon_eksplorasi_off.png);
+}
+.active i.tabbar-demo-icon-2 {
+	width: 30px;
+  height: 30px;
+  background-image:url(../icon/icon_eksplorasi.png);
+}
+i.tabbar-demo-icon-3 {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/icon_pengembangan_off.png);
+}
+.active i.tabbar-demo-icon-3 {
+	width: 30px;
+  height: 30px;
+  background-image:url(../icon/icon_pengembangan.png);
+}
+i.tabbar-demo-icon-4 {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/icon_kups_off.png);
+}
+.active i.tabbar-demo-icon-4 {
+	width: 30px;
+  height: 30px;
+  background-image:url(../icon/icon_kups.png);
+}
+i.tabbar-menu {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/menu.png);
+}
+
+i.tabbar-search {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/search.png);
+}
+i.tabbar-back {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/out.png);
+}
+i.tabbar-back2 {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/back.png);
+}
+i.tabbar-bantuan {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/help.png);
+}
+
+i.tabbar-search-tahun {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/search-tahun.png);
+}
+i.tabbar-search-tanggal {
+  width: 30px;
+  height: 30px;
+  background-image:url(../icon/search-tanggal.png);
+}

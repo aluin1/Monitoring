@@ -1,0 +1,33 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.pepc.exploration.dashboard"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.pepc.exploration.dashboard"
+    },
+    "cordova-plugin-googlemaps": {
+      "LOCATION_WHEN_IN_USE_DESCRIPTION": "This app wants to get your location while this app runs only.",
+      "LOCATION_ALWAYS_USAGE_DESCRIPTION": "This app wants to get your location always, even this app runs in background.",
+      "PACKAGE_NAME": "com.pepc.exploration.dashboard"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.pepc.exploration.dashboard"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.pepc.exploration.dashboard"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-support-android-plugin": {
+      "PACKAGE_NAME": "com.pepc.exploration.dashboard"
+    }
+  }
+}

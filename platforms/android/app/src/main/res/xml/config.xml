@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.pepc.exploration.dashboard" version="2.3.9" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
+    <feature name="CordovaGoogleMaps">
+        <param name="android-package" value="plugin.google.maps.CordovaGoogleMaps" />
+        <param name="onload" value="true" />
+        <param name="onreset" value="true" />
+    </feature>
+    <feature name="PluginMap">
+        <param name="android-package" value="plugin.google.maps.PluginMap" />
+    </feature>
+    <feature name="PluginPolyline">
+        <param name="android-package" value="plugin.google.maps.PluginPolyline" />
+    </feature>
+    <feature name="PluginPolygon">
+        <param name="android-package" value="plugin.google.maps.PluginPolygon" />
+    </feature>
+    <feature name="PluginMarker">
+        <param name="android-package" value="plugin.google.maps.PluginMarker" />
+    </feature>
+    <feature name="PluginCircle">
+        <param name="android-package" value="plugin.google.maps.PluginCircle" />
+    </feature>
+    <feature name="PluginTileOverlay">
+        <param name="android-package" value="plugin.google.maps.PluginTileOverlay" />
+    </feature>
+    <feature name="PluginGroundOverlay">
+        <param name="android-package" value="plugin.google.maps.PluginGroundOverlay" />
+    </feature>
+    <feature name="PluginKmlOverlay">
+        <param name="android-package" value="plugin.google.maps.PluginKmlOverlay" />
+    </feature>
+    <feature name="PluginGeocoder">
+        <param name="android-package" value="plugin.google.maps.PluginGeocoder" />
+    </feature>
+    <feature name="PluginLocationService">
+        <param name="android-package" value="plugin.google.maps.PluginLocationService" />
+    </feature>
+    <feature name="PluginEnvironment">
+        <param name="android-package" value="plugin.google.maps.PluginEnvironment" />
+    </feature>
+    <feature name="PluginMarkerCluster">
+        <param name="android-package" value="plugin.google.maps.PluginMarkerCluster" />
+    </feature>
+    <feature name="PluginStreetViewPanorama">
+        <param name="android-package" value="plugin.google.maps.PluginStreetViewPanorama" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>Exploration Dashboard Monitoring</name>
+    <description>
+       Exploration Dashboard Monitoring
+    </description>
+    <author email="ict.pepc@gmail.com" href="http://cordova.io">
+        PT. Pertamina EP Cepu
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+        <application android:usesCleartextTraffic="true" />
+    </edit-config>
+    <icon density="ldpi" src="res/icon-android/mipmap-ldpi/ic_launcher.png" />
+    <icon density="mdpi" src="res/icon-android/mipmap-mdpi/ic_launcher.png" />
+    <icon density="hdpi" src="res/icon-android/mipmap-hdpi/ic_launcher.png" />
+    <icon density="xhdpi" src="res/icon-android/mipmap-xhdpi/ic_launcher.png" />
+    <icon density="xxhdpi" src="res/icon-android/mipmap-xxhdpi/ic_launcher.png" />
+    <icon density="xxxhdpi" src="res/icon-android/mipmap-xxxhdpi/ic_launcher.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="xwalkZOrderOnTop" value="true" />
+    <preference name="BackgroundColor" value="0" />
+    <preference name="android-minSdkVersion" value="23" />
+    <preference name="phonegap-version" value="cli-8.1.1" />
+    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyDysKq9aGoHq2BmAb5ZyF-cZcdlwn8OCCQ" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="android-targetSdkVersion" value="29" />
+</widget>

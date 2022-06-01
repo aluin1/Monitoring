@@ -1,0 +1,28 @@
+   
+///load service Page  
+myApp.onPageInit("1-ss-survey-in-progress-detail", function(page){
+	 
+ 
+
+/*	 
+$$(".nextbutton").on("click", function(){
+	
+ myApp.showPreloader("<div style='margin-bottom:-15px'><img src='icon/ic_launcher.png' width='50'></div><p style='color: #047edf; font-size: 12px;  margin: 20px 0 0 ; '>Loading Aplikasi</p>");
+    setTimeout(function () {
+	if (strUsername!=null){ 
+		  mainView.router.loadPage('1-homepage.html');  
+		  
+		 }else{
+			mainView.router.loadPage('1-index-login.html'); 
+			 
+		 }
+		 
+	   myApp.hidePreloader();
+		 });
+ 
+});
+
+ */
+	 
+ 
+}); 

@@ -1,0 +1,27 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.pepc.digital.attendance"
+    },
+    "cordova-plugin-googlemaps": {
+      "PACKAGE_NAME": "com.pepc.digital.attendance"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.pepc.digital.attendance"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.pepc.digital.attendance"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.pepc.digital.attendance"
+    }
+  },
+  "dependent_plugins": {}
+}

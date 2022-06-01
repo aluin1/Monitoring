@@ -1,0 +1,31 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.pepc.digital.attendance"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.pepc.digital.attendance"
+    },
+    "cordova-plugin-googlemaps": {
+      "PLAY_SERVICES_VERSION": "15.0.1",
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.pepc.digital.attendance"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.pepc.digital.attendance"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-support-android-plugin": {
+      "PACKAGE_NAME": "com.pepc.digital.attendance"
+    }
+  }
+}
