@@ -19,7 +19,7 @@ $$('.btn-ed-dst-result-detail').on('click', function () {
  myApp.showPreloader("<div style='margin-bottom:-15px'><img src='icon/ic_launcher.png' width='50'></div><p style='color: #002e66; font-size: 14px;  margin: 20px 0 0 ; '>Loading Aplikasi</p>");	
 		 
 $$.ajax({
-    url: myApp.getWebApi('APPS-GET-Active-Well'),
+    url: myApp.getWebApi('APPS-GET-Active-Well-PostDrill'),
     method: 'POST',
     data: {},
     timeout: (5 * 60 * 1000),
