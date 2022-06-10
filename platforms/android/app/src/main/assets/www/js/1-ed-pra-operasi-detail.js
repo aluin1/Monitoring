@@ -5,24 +5,16 @@ myApp.onPageInit("1-ed-pra-operasi-detail", function(page){
  
 
 var WellId = localStorage.getItem("WellId");
-var WellName = localStorage.getItem("WellName");
-var ContractorName = localStorage.getItem("ContractorName");
-var AFENumber =localStorage.getItem("AFENumber");
- var AFECost = localStorage.getItem("AFECost"); 
- var CummulativeCost = localStorage.getItem("CummulativeCost"); 
- var WellType = localStorage.getItem("WellType"); 
- var WellEnv = localStorage.getItem("WellEnv"); 
- var TotalReport = localStorage.getItem("TotalReport");; 
- var WaterDepth = localStorage.getItem("WaterDepth"); 
- var LastDDR = localStorage.getItem("LastDDR");
- var WellImageUrl = localStorage.getItem("WellImageUrl"); 
- 
- 
-const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "Agustus", "September", "Oktober", "November", "Desember"];
+var WellName = localStorage.getItem("WellName"); 
+var OperatorName = localStorage.getItem("OperatorName"); 
+var FieldName = localStorage.getItem("FieldName"); 
+  
   
  
  var dtWellAllDetail = [];
 document.getElementById("strNamePra").innerHTML = WellName;
+document.getElementById("strOperatorName").innerHTML = OperatorName;
+document.getElementById("strFieldName").innerHTML = FieldName;
 	 
  $$.ajax({ 
  type: "POST",
@@ -36,56 +28,62 @@ document.getElementById("strNamePra").innerHTML = WellName;
       var objReturnPra = JSON.parse(data);
 
  
+  var head='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
+	   
+	   '<table class="table">'+
+			'	<tr style="background:linear-gradient(to right,#63cad4, #047edf);color:#fff;">'+
+			'	<td>Rencana Kegiatan</td>'+
+			'	<td>Progress</td>'+
+			'	<td>Button</td>'+
+			'	</tr>';
+			 dtWellAllDetail.push(head); 
 
-		  for (i = 0; i < objReturnPra.length; i++) {
-      console.log(objReturnPra[i].PeriodId); 
-
- let formattedScheduleReportDate="";
- //let formattedEndDate="";	  
-	  if(objReturnPra[i].ScheduleReportDate!=""){ 
- let currentScheduleReportDate =  new Date(objReturnPra[i].ScheduleReportDate);
-  formattedScheduleReportDate = currentScheduleReportDate.getDate() + " " + months[currentScheduleReportDate.getMonth()] + " " + currentScheduleReportDate.getFullYear();
- 	 }
-	 
-	 
-	// if(objReturnPra[i].EndDate!=""){ 
-//let currentEndDate =  new Date(objReturnPra[i].EndDate);
- // formattedEndDate = currentEndDate.getDate() + " " + months[currentEndDate.getMonth()] + " " + currentEndDate.getFullYear();
-	//   }
-	   var dtWelldtl='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
-			 	'<table style="font-size:12px">	'+
-				 '<tbody> '+ 
-				  '<tr><td ><b  > Schedule Report Date: </b> <br>'+formattedScheduleReportDate+'  </td> <td><b  > Schedule Report Name: </b> <br>'+objReturnPra[i].ScheduleReportName+'  </td></tr>'+
-				  '<tr><td width="50%"><b  > Prognosis Start: </b> <br>'+objReturnPra[i].PrognosisStart+'  </td> <td><b  >Prognosis Date: </b> <br>'+objReturnPra[i].PrognosisDate+'  </td> </tr>'+
-			  '<tr><td width="50%"><b  > Target Start: </b> <br>'+objReturnPra[i].TargetStart+'  </td> <td><b  >Target End: </b> <br>'+objReturnPra[i].TargetEnd+'  </td> </tr>'+
-			  '<tr><td width="50%"><b  > Focus Item: </b> <br>'+objReturnPra[i].FocusItem+'  </td> <td><b  >Focus Item Detail: </b> <br>'+objReturnPra[i].FocusItemDetail+'  </td> </tr>'+
-			  '<tr><td width="50%"><b  > Focus Item Progress: </b> <br>'+objReturnPra[i].FocusItemProgress+'  </td> <td><b  >Focus Item Status: </b> <br>'+objReturnPra[i].FocusItemStatus+'  </td> </tr>'+
-			  '<tr><td width="50%"><b  > Focus Item Issue: </b> <br>'+objReturnPra[i].FocusItemIssue+'  </td> <td><b  >Focus Item Plan: </b> <br>'+objReturnPra[i].FocusItemPlan+'  </td> </tr>'+
-			  '<tr><td width="50%" colspan="2"><b  >FocusItem Target Date: </b> <br>'+objReturnPra[i].FocusItemTargetDate+'  </td>  </tr>'+
+		  for (i = 0; i < objReturnPra.length; i++) { 
+var selisih =100-parseInt(objReturnPra[i].FocusItemProgressInt);
+	   var dtWelldtl=
+			'	<tr class=" ">'+
+			'	<td>'+objReturnPra[i].FocusItem+'</td>'+
+			'	<td  >'+
 			 
-				  '</tbody></table>'+
-				 '</div> ';  
+			
+'<div class="svg-item">'+
+ ' <svg width="50px" height="100%" viewBox="0 0 40 40" class="donut">'+
+  '  <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>'+
+   ' <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>'+
+   ' <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="'+parseInt(objReturnPra[i].FocusItemProgressInt)+'  '+selisih+'" stroke-dashoffset="25"></circle>'+
+   ' <g class="donut-text donut-text-1">'+
+
+    '  <text y="50%" transform="translate(0, 2)">'+
+     '   <tspan x="50%" text-anchor="middle" class="donut-percent">'+objReturnPra[i].FocusItemProgress+' </tspan>   '+
+     ' </text>'+ 
+   ' </g>'+
+ ' </svg>'+
+'</div>'+
+			'</td>'+
+				'<td><label  class="btn-ed-pra-operasi-detail-chart badge badge-info"  dataWellName="'+WellName+'" data-id="'+WellId+'"  data-focus="'+objReturnPra[i].FocusItem+'" >Detail</label></td>'+
+				'</tr>'; 
+				
+			
 			 dtWellAllDetail.push(dtWelldtl); 
 			 
       myApp.hidePreloader();
 } 
- 
+ var foot='	</table>'; 
+			 dtWellAllDetail.push(foot); 
 document.getElementById("data-well-pra-detail").innerHTML =dtWellAllDetail.join(" ");
 
-//$$('.btn-well-report').on('click', function () {
-	 //  var dataid  = $$(this).attr("data-id");
-	  // var dataname  = $$(this).attr("data-name"); 
-	  // var dataWellName  = $$(this).attr("dataWellName"); 
-	  // var ChartUrl  = $$(this).attr("ChartUrl");
+ $$('.btn-ed-pra-operasi-detail-chart').on('click', function () {
+	   var dataWellIdChart  = $$(this).attr("data-id");
+	   var dataFocusItem  = $$(this).attr("data-focus");  
+	   var dataWellName  = $$(this).attr("dataWellName");  
  
- // mainView.router.loadPage('1-ed-drilling-in-progress-report.html');
+  mainView.router.loadPage('1-ed-pra-operasi-detail-chart.html');
 
 
-	//localStorage.setItem('dataid', dataid);
-	//localStorage.setItem('dataname', dataname);
-	//localStorage.setItem('dataWellName', dataWellName); 
-	////localStorage.setItem('ChartUrl', ChartUrl); 
-//});
+	 localStorage.setItem('dataWellIdChart', dataWellIdChart);
+	 localStorage.setItem('dataFocusItem', dataFocusItem); 
+	 localStorage.setItem('dataWellName', dataWellName); 
+ });
     },
 
     error: function (xhr, status) {
@@ -97,4 +95,108 @@ document.getElementById("data-well-pra-detail").innerHTML =dtWellAllDetail.join(
     }
   });
 
+
+
+/*
+var chart;
+
+$(document).ready(function() {
+
+    chart = new Highcharts.Chart({
+        chart: {
+            renderTo: 'container-donut',
+			  plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+		
+            type: 'pie',
+            marginRight:  0,
+            marginBottom: 150, 
+            events: {
+                load: requestData
+            }
+        },
+        title: {
+            text: ' ',
+            x: -20 //center
+        },
+        xAxis: {
+            categories: [1,2,3,4,5]
+        },
+        yAxis: {
+            title: {
+                text: ' '
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+		
+    tooltip: {
+        pointFormat: 'Focus Item Progress :<b> {point.y}%</b> <br>Percentage: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: ' %'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+               enabled: false
+            },
+            showInLegend: true
+         }
+     },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: 0,
+            y: 250,
+            borderWidth: 0
+        },
+        series: [{ 
+	//minPointSize: 10,
+        innerSize: '20%',
+      //  zMin: 0,
+        data: []
+    }]
+    });
+});
+
+ var dataChart = [];
+function requestData() {
+    $$.ajax({
+       
+ type: "POST",
+        url:  myApp.getWebApi('APPS-GET-Well-Schedule'),
+        data: {"txtWellId":""+WellId+""} ,
+   //     dataType: "json", 
+   
+    
+        success: function(data) {
+      var objReturn = JSON.parse(data);
+
+  console.log(objReturn);
+
+		   for (i = 0; i < objReturn.length; i++) {
+		 	  var A={name: objReturn[i].FocusItem,y: parseInt(objReturn[i].FocusItemProgressInt) }; 
+		 	  dataChart.push(A); 
+		  }
+		 	  
+  console.log(dataChart);
+            chart.addSeries({
+               innerSize: '20%',
+              data: dataChart
+            });
+        },
+        cache: false
+    });
+}
+*/
 }); 

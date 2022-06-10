@@ -6,6 +6,8 @@ var dataid = localStorage.getItem("dataid");
 var dataname = localStorage.getItem("dataname");
 var dataWellName = localStorage.getItem("dataWellName"); 
 var ChartUrl = localStorage.getItem("ChartUrl"); 
+var OperatorName = localStorage.getItem("OperatorName");
+var FieldName = localStorage.getItem("FieldName");
 
  
  var dtWellAllReport = [];
@@ -39,8 +41,9 @@ $$('.pb-popup-dark').on('click', function () {
 			  
 document.getElementById("ChartUrl").innerHTML = dtWellAllReportChart; 
 			 
-document.getElementById("dataWellName").innerHTML = dataWellName; 
-document.getElementById("dataname").innerHTML = dataname; 
+document.getElementById("OperatorNameReport").innerHTML = OperatorName; 
+document.getElementById("FieldNameReport").innerHTML = FieldName; 
+document.getElementById("strNameReport").innerHTML = dataWellName;  
 
 
 $$.ajax({ 

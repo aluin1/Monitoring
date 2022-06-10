@@ -5,6 +5,8 @@ myApp.onPageInit("1-ed-drilling-in-progress-afe", function(page){
 var ReportId = localStorage.getItem("ReportId");
 var RigName = localStorage.getItem("RigName");
 var ReportDate = localStorage.getItem("ReportDate");
+var OperatorName2 = localStorage.getItem("OperatorName");
+var FieldName2 = localStorage.getItem("FieldName");
 
  
 var dataname = localStorage.getItem("dataname");
@@ -38,10 +40,9 @@ const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "
 		 
 	  
 			 
-document.getElementById("dataWellNameAFE").innerHTML = dataWellName; 
-document.getElementById("datanameAFE").innerHTML = dataname; 
-document.getElementById("RigName").innerHTML = RigName; 
-document.getElementById("ReportDate").innerHTML = ReportDate; 
+document.getElementById("OperatorNameAFE").innerHTML = OperatorName2; 
+document.getElementById("strNameAFE").innerHTML = dataWellName; 
+document.getElementById("FieldNameAFE").innerHTML = FieldName2;  
 
 
 $$.ajax({ 
@@ -67,10 +68,12 @@ $$.ajax({
 				 '<tr>'+
 				  '<tr><td width="50%"><b>AFE Number: <br></b> '+objReturn[i].AFENumber+'  </td> <td><b>Currency: <br></b> '+objReturn[i].Currency+'  </td></tr> '+
 				  '<tr><td width="50%"><b>AFE Cost: <br></b> '+objReturn[i].AFECost+'  </td> <td><b>Daily Cost: <br></b> '+objReturn[i].DailyCost+'  </td></tr> '+
-				  '<tr><td width="50%"><b>Cummulative Cost: <br></b> '+objReturn[i].CummulativeCost+'   </td> <td><b>Daily Mud Cost: <br></b> '+objReturn[i].DailyMudCost+'   </td></tr> '+
-				  '<tr><td width="50%"><b>Cummulative Mud Cost: <br></b> '+objReturn[i].CummulativeMudCost+'    </td> <td><b>Day Supervisor: <br></b> '+objReturn[i].DaySupervisor+'   </td></tr> '+  
-				  '<tr><td width="50%"><b>Night Supervisor: <br></b> '+objReturn[i].NightSupervisor+'   </td> <td><b>Engineer: <br></b> '+objReturn[i].Engineer+'   </td></tr> '+  
-				   '<tr><td width="50%"><b>Geologist: <br></b> '+objReturn[i].Geologist+'   </td> <td>   </td></tr> '+  
+				  '<tr><td width="50%"><b>Cummulative Cost: <br></b> '+objReturn[i].CummulativeCost+'   </td> <td ><b>Cummulative Mud Cost: <br></b> '+objReturn[i].CummulativeMudCost+'    </td> </tr> '+
+				 // '<tr><td width="50%"><b>Cummulative Cost: <br></b> '+objReturn[i].CummulativeCost+'   </td> <td><b>Daily Mud Cost: <br></b> '+objReturn[i].DailyMudCost+'   </td></tr> '+
+				  
+				 // '<tr><td width="50%"><b>Cummulative Mud Cost: <br></b> '+objReturn[i].CummulativeMudCost+'    </td> <td><b>Day Supervisor: <br></b> '+objReturn[i].DaySupervisor+'   </td></tr> '+  
+				//  '<tr><td width="50%"><b>Night Supervisor: <br></b> '+objReturn[i].NightSupervisor+'   </td> <td><b>Engineer: <br></b> '+objReturn[i].Engineer+'   </td></tr> '+  
+				//   '<tr><td width="50%"><b>Geologist: <br></b> '+objReturn[i].Geologist+'   </td> <td>   </td></tr> '+  
 				  // '<tr><td width="50%" colspan="2"><br> </td>  </tr> '+  
 				 
 				 '</tbody></table>';
@@ -122,12 +125,13 @@ $$.ajax({
 				 '<tr>'+
 				  '<tr><td width="50%"><b>Bit Number: <br></b> '+objReturnBitRecord[i].BitNumber+'  </td> <td><b>Bit Size: <br></b> '+objReturnBitRecord[i].BitSize+' '+objReturnBitRecord[i].UOMBitSize+'  </td></tr> '+
 				  '<tr><td width="50%"><b>Bit Run: <br></b> '+objReturnBitRecord[i].BitRun+' </td> <td><b>Bit Manufacturer: <br></b> '+objReturnBitRecord[i].BitManufacturer+'  </td></tr> '+
-				  '<tr><td width="50%"><b>Bit IADC Code: <br></b> '+objReturnBitRecord[i].BitIADCCode+'  </td> <td><b>Bit Jets: <br></b> '+objReturnBitRecord[i].BitJets+' '+objReturnBitRecord[i].UOMBitJets+'  </td></tr> '+
-				  '<tr><td width="50%"><b>Bit Serial Number: <br></b> '+objReturnBitRecord[i].BitSerialNumber+'    </td> <td><b>Bit Depth In: <br></b> '+objReturnBitRecord[i].BitDepthIn+' '+objReturnBitRecord[i].UOMBitDepthIn+'   </td></tr> '+  
-				  '<tr><td width="50%"><b>Bit Depth Out: <br></b> '+objReturnBitRecord[i].BitDepthOut+' '+objReturnBitRecord[i].UOMBitDepthOut+'  </td> <td><b>Bit Footage: <br></b> '+objReturnBitRecord[i].BitFootage+'  '+objReturnBitRecord[i].UOMBitFootage+'   </td></tr> '+  
-				  '<tr><td width="50%"><b>Bit Hours: <br></b> '+objReturnBitRecord[i].BitHours+' '+objReturnBitRecord[i].UOMBitHours+'  </td> <td><b>Bit Footage: <br></b> '+objReturnBitRecord[i].BitTotalFieldArea+'  '+objReturnBitRecord[i].UOMBitTotalFieldArea+'   </td></tr> '+  
-				   '<tr><td width="50%">  <b>Bit Dull Grade: <br></b> '+objReturnBitRecord[i].BitDullGrade+'  </td><td><b>Cumulative Bit Footage: <br></b> '+objReturnBitRecord[i].CumulativeBitFootage+' '+objReturnBitRecord[i].UOMCumulativeBitFootage+'  </td></tr> '+   
-				   '<tr><td width="50%">   <b>Cumulative Bit Hours: <br></b> '+objReturnBitRecord[i].CumulativeBitHours+' '+objReturnBitRecord[i].UOMCumulativeBitHours+'   </td><td><b>Cumulative Bit Rop: <br></b> '+objReturnBitRecord[i].CumulativeBitRop+' '+objReturnBitRecord[i].UOMCumulativeBitRop+' </td></tr> '+
+				 // '<tr><td width="50%"><b>Bit IADC Code: <br></b> '+objReturnBitRecord[i].BitIADCCode+'  </td> <td><b>Bit Jets: <br></b> '+objReturnBitRecord[i].BitJets+' '+objReturnBitRecord[i].UOMBitJets+'  </td></tr> '+
+				 // '<tr><td width="50%"><b>Bit Serial Number: <br></b> '+objReturnBitRecord[i].BitSerialNumber+'    </td> <td><b>Bit Depth In: <br></b> '+objReturnBitRecord[i].BitDepthIn+' '+objReturnBitRecord[i].UOMBitDepthIn+'   </td></tr> '+  
+				  // '<tr><td width="50%"><b>Bit Depth Out: <br></b> '+objReturnBitRecord[i].BitDepthOut+' '+objReturnBitRecord[i].UOMBitDepthOut+'  </td> <td><b>Bit Footage: <br></b> '+objReturnBitRecord[i].BitFootage+'  '+objReturnBitRecord[i].UOMBitFootage+'   </td></tr> '+  
+				  // '<tr><td width="50%"><b>Bit Hours: <br></b> '+objReturnBitRecord[i].BitHours+' '+objReturnBitRecord[i].UOMBitHours+'  </td> <td><b>Bit Footage: <br></b> '+objReturnBitRecord[i].BitTotalFieldArea+'  '+objReturnBitRecord[i].UOMBitTotalFieldArea+'   </td></tr> '+  
+				   //  '<tr><td width="50%">  <b>Bit Dull Grade: <br></b> '+objReturnBitRecord[i].BitDullGrade+'  </td><td><b>Cumulative Bit Footage: <br></b> '+objReturnBitRecord[i].CumulativeBitFootage+' '+objReturnBitRecord[i].UOMCumulativeBitFootage+'  </td></tr> '+   
+				   '<tr><td colspan="2">   <b>Cumulative Bit Hours: <br></b> '+objReturnBitRecord[i].CumulativeBitHours+' '+objReturnBitRecord[i].UOMCumulativeBitHours+'   </td> </tr> '+
+				  // '<tr><td width="50%">   <b>Cumulative Bit Hours: <br></b> '+objReturnBitRecord[i].CumulativeBitHours+' '+objReturnBitRecord[i].UOMCumulativeBitHours+'   </td><td><b>Cumulative Bit Rop: <br></b> '+objReturnBitRecord[i].CumulativeBitRop+' '+objReturnBitRecord[i].UOMCumulativeBitRop+' </td></tr> '+
 				 
 				 '</tbody></table>';
 				
@@ -206,37 +210,8 @@ document.getElementById("data-well-casing").innerHTML =dtWellAllCasing.join(" ")
   });
 	
 
-
-
-$$.ajax({ 
- type: "POST",
-        url:  myApp.getWebApi('APPS-GET-Well-Period-Report-Directional-Survey'),
-        data: {"txtReportId":""+ReportId+""} ,
-    
-    timeout: (5 * 60 * 1000),
-    success: function (data, status, xhr) {
-
-      console.log(data);
-      var objReturnCasing = JSON.parse(data);
-
-      console.log(objReturnCasing);
+ /*
  
- var dtWellReportDirectionalSurvey='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
-			 	'<div class="card-title" >  Directional Survey</div>	'+
-			 	'<table style="font-size:12px" border="1">	'+
-				 '<tbody> '+
-				 '<tr><td  style="padding:5px;background-color: #002e66;color: #fff;"><b>Survey MD </b></td><td  style="padding:5px;background-color: #002e66;color: #fff;"><b>Survey Inc </b></td><td style="padding:5px;background-color: #002e66;color: #fff;"><b>Survey Azm </b></td></tr>';
-				 
-			 dtWellAllDirectionalSurvey.push(dtWellReportDirectionalSurvey); 
-			 
-			 
-		/*	if (objReturnCasing=[]){
-			dtWellReportDirectionalSurvey='<tr><td colspan="3" style="padding:5px;color: red;text-align: center;">Data No Record</td></tr>'; 
-	  
-			 dtWellAllDirectionalSurvey.push(dtWellReportDirectionalSurvey); 
-			 
-			myApp.hidePreloader();
-			}else{*/
 		  for (i = 0; i < objReturnCasing.length; i++) { 
 		  console.log(objReturnCasing[i].SurveyMD);
 	   dtWellReportDirectionalSurvey='<tr><td style="padding:5px;text-align: right; " > '+objReturnCasing[i].SurveyMD+' '+objReturnCasing[i].UOMSurveyMD+'   </td> <td style="padding:5px; text-align: right;"> '+objReturnCasing[i].SurveyInc+' '+objReturnCasing[i].UOMSurveyInc+'  </td>  '+
@@ -266,7 +241,7 @@ document.getElementById("data-well-directional-survey").innerHTML =dtWellAllDire
       myApp.hidePreloader();
     }
   });
-
+*/
   /*
 	 var dtWellReportDirectionalSurvey='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
 			 	'<div class="card-title" >Report Directional Survey</div>	'+
@@ -318,18 +293,19 @@ let currentMudTime=  new Date(objReturnDrillingFluid[i].MudTime);
 				  '<tr><td width="50%"><b>Order No: <br></b> '+objReturnDrillingFluid[i].OrderNo+'   </td> <td><b>Mud Type: <br></b> '+objReturnDrillingFluid[i].MudType+'   </td></tr> '+
 				  '<tr><td width="50%"><b>Mud Time: <br></b> '+formattedMudTime+'  </td> <td><b>MW In: <br></b> '+objReturnDrillingFluid[i].MWIn+' '+objReturnDrillingFluid[i].UOMMWIn+'  </td></tr> '+
 				  '<tr><td width="50%"><b>MW Out: <br></b> '+objReturnDrillingFluid[i].MWOut+' '+objReturnDrillingFluid[i].UOMMWOut+'  </td> <td><b>Temp In: <br></b> '+objReturnDrillingFluid[i].TempIn+' '+objReturnDrillingFluid[i].UOMTempIn+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>Temp Out: <br></b> '+objReturnDrillingFluid[i].TempOut+' '+objReturnDrillingFluid[i].UOMTempOut+'  </td> <td><b>Pres Grad: <br></b> '+objReturnDrillingFluid[i].PresGrad+' '+objReturnDrillingFluid[i].UOMPresGrad+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>Visc: <br></b> '+objReturnDrillingFluid[i].Visc+' '+objReturnDrillingFluid[i].UOMVisc+'  </td> <td><b>PV: <br></b> '+objReturnDrillingFluid[i].PV+' '+objReturnDrillingFluid[i].UOMPV+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>YP: <br></b> '+objReturnDrillingFluid[i].YP+' '+objReturnDrillingFluid[i].UOMYP+'  </td> <td><b>Gels 10 Sec: <br></b> '+objReturnDrillingFluid[i].Gels10Sec+' '+objReturnDrillingFluid[i].UOMGels10Sec+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>Gels 10 Min: <br></b> '+objReturnDrillingFluid[i].Gels10Min+' '+objReturnDrillingFluid[i].UOMGels10Min+'  </td> <td><b>Fluid Loss: <br></b> '+objReturnDrillingFluid[i].FluidLoss+' '+objReturnDrillingFluid[i].UOMFluidLoss+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>pH: <br></b> '+objReturnDrillingFluid[i].pH+'   </td> <td><b>Solid: <br></b> '+objReturnDrillingFluid[i].Solid+' '+objReturnDrillingFluid[i].UOMSolid+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>Sand: <br></b> '+objReturnDrillingFluid[i].Sand+' '+objReturnDrillingFluid[i].UOMSand+'  </td> <td><b>Water: <br></b> '+objReturnDrillingFluid[i].Water+' '+objReturnDrillingFluid[i].UOMWater+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>Oil: <br></b> '+objReturnDrillingFluid[i].Oil+' '+objReturnDrillingFluid[i].UOMOil+'  </td> <td><b>HGS: <br></b> '+objReturnDrillingFluid[i].HGS+' '+objReturnDrillingFluid[i].UOMHGS+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>LGS: <br></b> '+objReturnDrillingFluid[i].LGS+' '+objReturnDrillingFluid[i].UOMLGS+'  </td> <td><b>LTLP: <br></b> '+objReturnDrillingFluid[i].LTLP+' '+objReturnDrillingFluid[i].UOMLTLP+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>HTHP: <br></b> '+objReturnDrillingFluid[i].HTHP+' '+objReturnDrillingFluid[i].UOMHTHP+'  </td> <td><b>Cake: <br></b> '+objReturnDrillingFluid[i].Cake+' '+objReturnDrillingFluid[i].UOMCake+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>EStb: <br></b> '+objReturnDrillingFluid[i].EStb+' '+objReturnDrillingFluid[i].UOMEStb+'  </td> <td><b>PF: <br></b> '+objReturnDrillingFluid[i].PF+' '+objReturnDrillingFluid[i].UOMPF+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>MF: <br></b> '+objReturnDrillingFluid[i].MF+' '+objReturnDrillingFluid[i].UOMMF+'  </td> <td><b>PM: <br></b> '+objReturnDrillingFluid[i].PM+' '+objReturnDrillingFluid[i].UOMPM+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>ECD: <br></b> '+objReturnDrillingFluid[i].ECD+' '+objReturnDrillingFluid[i].UOMECD+'  </td> <td>  </td></tr> '+ 
+				  '<tr><td width="50%"><b>Temp Out: <br></b> '+objReturnDrillingFluid[i].TempOut+' '+objReturnDrillingFluid[i].UOMTempOut+'  </td> <td><b>Fluid Loss: <br></b> '+objReturnDrillingFluid[i].FluidLoss+' '+objReturnDrillingFluid[i].UOMFluidLoss+'  </td></tr> '+ 
+				 // '<tr><td colspan="2"><b>Temp Out: <br></b> '+objReturnDrillingFluid[i].TempOut+' '+objReturnDrillingFluid[i].UOMTempOut+'  </td> <td><b>Pres Grad: <br></b> '+objReturnDrillingFluid[i].PresGrad+' '+objReturnDrillingFluid[i].UOMPresGrad+'  </td></tr> '+ 
+				//  '<tr><td width="50%"><b>Visc: <br></b> '+objReturnDrillingFluid[i].Visc+' '+objReturnDrillingFluid[i].UOMVisc+'  </td> <td><b>PV: <br></b> '+objReturnDrillingFluid[i].PV+' '+objReturnDrillingFluid[i].UOMPV+'  </td></tr> '+ 
+				//  '<tr><td width="50%"><b>YP: <br></b> '+objReturnDrillingFluid[i].YP+' '+objReturnDrillingFluid[i].UOMYP+'  </td> <td><b>Gels 10 Sec: <br></b> '+objReturnDrillingFluid[i].Gels10Sec+' '+objReturnDrillingFluid[i].UOMGels10Sec+'  </td></tr> '+ 
+				 //  '<tr><td width="50%"><b>Gels 10 Min: <br></b> '+objReturnDrillingFluid[i].Gels10Min+' '+objReturnDrillingFluid[i].UOMGels10Min+'  </td> <td><b>Fluid Loss: <br></b> '+objReturnDrillingFluid[i].FluidLoss+' '+objReturnDrillingFluid[i].UOMFluidLoss+'  </td></tr> '+ 
+				//  '<tr><td width="50%"><b>pH: <br></b> '+objReturnDrillingFluid[i].pH+'   </td> <td><b>Solid: <br></b> '+objReturnDrillingFluid[i].Solid+' '+objReturnDrillingFluid[i].UOMSolid+'  </td></tr> '+ 
+				//  '<tr><td width="50%"><b>Sand: <br></b> '+objReturnDrillingFluid[i].Sand+' '+objReturnDrillingFluid[i].UOMSand+'  </td> <td><b>Water: <br></b> '+objReturnDrillingFluid[i].Water+' '+objReturnDrillingFluid[i].UOMWater+'  </td></tr> '+ 
+				 // '<tr><td width="50%"><b>Oil: <br></b> '+objReturnDrillingFluid[i].Oil+' '+objReturnDrillingFluid[i].UOMOil+'  </td> <td><b>HGS: <br></b> '+objReturnDrillingFluid[i].HGS+' '+objReturnDrillingFluid[i].UOMHGS+'  </td></tr> '+ 
+				//  '<tr><td width="50%"><b>LGS: <br></b> '+objReturnDrillingFluid[i].LGS+' '+objReturnDrillingFluid[i].UOMLGS+'  </td> <td><b>LTLP: <br></b> '+objReturnDrillingFluid[i].LTLP+' '+objReturnDrillingFluid[i].UOMLTLP+'  </td></tr> '+ 
+				 // '<tr><td width="50%"><b>HTHP: <br></b> '+objReturnDrillingFluid[i].HTHP+' '+objReturnDrillingFluid[i].UOMHTHP+'  </td> <td><b>Cake: <br></b> '+objReturnDrillingFluid[i].Cake+' '+objReturnDrillingFluid[i].UOMCake+'  </td></tr> '+ 
+				 // '<tr><td width="50%"><b>EStb: <br></b> '+objReturnDrillingFluid[i].EStb+' '+objReturnDrillingFluid[i].UOMEStb+'  </td> <td><b>PF: <br></b> '+objReturnDrillingFluid[i].PF+' '+objReturnDrillingFluid[i].UOMPF+'  </td></tr> '+ 
+				//  '<tr><td width="50%"><b>MF: <br></b> '+objReturnDrillingFluid[i].MF+' '+objReturnDrillingFluid[i].UOMMF+'  </td> <td><b>PM: <br></b> '+objReturnDrillingFluid[i].PM+' '+objReturnDrillingFluid[i].UOMPM+'  </td></tr> '+ 
+				 // '<tr><td width="50%"><b>ECD: <br></b> '+objReturnDrillingFluid[i].ECD+' '+objReturnDrillingFluid[i].UOMECD+'  </td> <td>  </td></tr> '+ 
 				  '<tr><td width="50%" colspan="2"><hr style="border-top: 2px solid rgb(0 46 102);">  </td>  </tr> '+ 
 				 '</tbody></table>';
 				  
@@ -377,10 +353,11 @@ $$.ajax({
 				 '<tbody> '+
 				 '<tr>'+
 				  '<tr><td width="50%"><b>AVG Wob: <br></b> '+objReturnDrilling[i].AVGWob+' '+objReturnDrilling[i].UOMAVGWob+'   </td> <td><b>AVG Rop: <br></b> '+objReturnDrilling[i].AVGRop+'  '+objReturnDrilling[i].UOMAVGRop+'   </td></tr> '+
-				  '<tr><td width="50%"><b>AVG Rpm: <br></b> '+objReturnDrilling[i].AVGRpm+'  '+objReturnDrilling[i].UOMAVGRpm+'  </td> <td><b>Torque: <br></b> '+objReturnDrilling[i].Torque+' '+objReturnDrilling[i].UOMTorque+'  </td></tr> '+
+				  '<tr><td colspan="2"><b>AVG Rpm: <br></b> '+objReturnDrilling[i].AVGRpm+'  '+objReturnDrilling[i].UOMAVGRpm+'  </td>  </tr> '+
+				 //  '<tr><td width="50%"><b>AVG Rpm: <br></b> '+objReturnDrilling[i].AVGRpm+'  '+objReturnDrilling[i].UOMAVGRpm+'  </td> <td><b>Torque: <br></b> '+objReturnDrilling[i].Torque+' '+objReturnDrilling[i].UOMTorque+'  </td></tr> '+
 				  '<tr><td width="50%"><b>Stand Pipe Press: <br></b> '+objReturnDrilling[i].StandPipePress+' '+objReturnDrilling[i].UOMStandPipePress+'  </td> <td><b>FlowRate: <br></b> '+objReturnDrilling[i].FlowRate+' '+objReturnDrilling[i].UOMFlowRate+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>String Weight: <br></b> '+objReturnDrilling[i].StringWeight+' '+objReturnDrilling[i].UOMStringWeight+'  </td> <td><b>Rotating Weight: <br></b> '+objReturnDrilling[i].RotatingWeight+' '+objReturnDrilling[i].UOMRotatingWeight+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>Total Drilling Time: <br></b> '+objReturnDrilling[i].TotalDrillingTime+' '+objReturnDrilling[i].UOMTotalDrillingTime+'  </td> <td><b>Circulating Press: <br></b> '+objReturnDrilling[i].CirculatingPress+' '+objReturnDrilling[i].UOMCirculatingPress+'  </td></tr> '+  
+				 // '<tr><td width="50%"><b>String Weight: <br></b> '+objReturnDrilling[i].StringWeight+' '+objReturnDrilling[i].UOMStringWeight+'  </td> <td><b>Rotating Weight: <br></b> '+objReturnDrilling[i].RotatingWeight+' '+objReturnDrilling[i].UOMRotatingWeight+'  </td></tr> '+ 
+				 // '<tr><td width="50%"><b>Total Drilling Time: <br></b> '+objReturnDrilling[i].TotalDrillingTime+' '+objReturnDrilling[i].UOMTotalDrillingTime+'  </td> <td><b>Circulating Press: <br></b> '+objReturnDrilling[i].CirculatingPress+' '+objReturnDrilling[i].UOMCirculatingPress+'  </td></tr> '+  
 				 
 				 '</tbody></table>';
 				
@@ -405,7 +382,7 @@ document.getElementById("data-well-drilling-parameters").innerHTML =dtWellAllDri
   });
 
 
-
+/*
 $$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Period-Report-Gas'),
@@ -451,11 +428,11 @@ document.getElementById("data-well-gas").innerHTML =dtWellAllGas.join(" ");
     }
   });
    
-			 
+	*/		 
 			  
 
 
-
+/*
 $$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Period-Report-HSE'),
@@ -510,7 +487,9 @@ document.getElementById("data-well-hse").innerHTML =dtWellAllHSE.join(" ");
     }
   });
 
+*/
 
+/*
 	$$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Period-Report-Hydraulic-Analysis'),
@@ -560,8 +539,8 @@ document.getElementById("data-well-hydraulic-analysis").innerHTML =dtWellAllHydr
     }
   });
 
-
-
+*/
+/*
 $$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Period-Report-Mud-Additive'),
@@ -608,9 +587,9 @@ document.getElementById("data-well-mud-additive").innerHTML =dtWellAllMudAdditiv
     }
   });
 
+*/
 
-
-
+/*
 $$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Period-Report-Mud-Volume'),
@@ -658,7 +637,7 @@ document.getElementById("data-well-mud-volume").innerHTML =dtWellAllMudVolume.jo
     }
   });
 
-
+*/
 
 
 $$.ajax({ 
@@ -793,7 +772,7 @@ document.getElementById("data-well-npt").innerHTML =dtWellAllNPT.join(" ");
   });
   
    */
-
+/*
 $$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Period-Report-Personnel'),
@@ -843,8 +822,8 @@ document.getElementById("data-well-personnel").innerHTML =dtWellAllPersonnel.joi
   });
 
 
-
-
+  */
+ /*
 $$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Period-Report-Pumps'),
@@ -912,8 +891,8 @@ document.getElementById("data-well-pumps").innerHTML =dtWellAllPumps.join(" ");
   });
   
   
-  
-  
+   */
+  /*
   
 $$.ajax({ 
  type: "POST",
@@ -975,9 +954,9 @@ document.getElementById("data-well-time-breakdown").innerHTML =dtWellAllTimeBrea
     }
   });
   
+    */
   
-  
-  
+   /* 
 $$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Period-Report-Weather'),
@@ -1026,5 +1005,5 @@ document.getElementById("data-well-weather").innerHTML =dtWellAllWeather.join(" 
       myApp.hidePreloader();
     }
   });
-
+*/
 }); 

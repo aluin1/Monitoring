@@ -18,6 +18,7 @@ $$('.btn-ed-pra-operasi').on('click', function () {
  mainView.router.loadPage('1-ed-pra-operasi.html');
 
 });
+ 
 
 $$('.btn-ed-drilling-in-progress').on('click', function () {
  
