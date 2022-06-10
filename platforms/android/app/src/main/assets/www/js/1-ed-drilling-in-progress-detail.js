@@ -100,7 +100,7 @@ let currentEndDate =  new Date(objReturn[i].EndDate);
 				  '<tr><td colspan="2"><b  > Activity Name: </b> <br>'+objReturn[i].WellPeriodName+'  </td> </tr>'+
 				  '<tr><td width="50%"><b  > Start Date: </b> <br>'+formattedStartDate+'  </td> <td><b  > End Date: </b> <br>'+formattedEndDate+'  </td> </tr>'+
 				  '<tr><td colspan="2"> <br>   </td> </tr>'+
-				 '<tr><td  colspan="2" style="font-size:15px;text-align: right;color: #002e66;"> <label class="btn-well-report badge badge-info" dataWellName="'+WellName+'" data-name="'+objReturn[i].WellPeriodName+'" data-id="'+objReturn[i].PeriodId+'" ChartUrl="'+objReturn[i].ChartUrl+'">Report</label></td></tr>'+
+				 '<tr><td  colspan="2" style="font-size:15px;text-align: right;color: #002e66;"> <label class="btn-well-report badge badge-info"   dataWellName="'+WellName+'" data-name="'+objReturn[i].WellPeriodName+'" data-id="'+objReturn[i].PeriodId+'" ChartUrl="'+objReturn[i].ChartUrl+'">Report</label></td></tr>'+
 			 			  '</tbody></table>'+
 				 '</div> ';  
 			 dtWellAllDetail.push(dtWelldtl); 

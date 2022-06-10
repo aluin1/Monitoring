@@ -95,7 +95,7 @@ let currentRigReleaseDate=  new Date(objReturn[i].RigReleaseDate);
 				    '<tr><td width="50%" colspan="2"><br> </td>  </tr> '+  
 				  '<tr><td width="50%" colspan="2"><b>Daily Forecast: <br></b> '+objReturn[i].DailyForecast+' </b> </td>  </tr> '+  
 				    '<tr><td width="50%" colspan="2"><br> </td>  </tr> '+  
-				  '<tr><td width="50%" colspan="2"  style="font-size:15px;text-align: right;color: #002e66;"><label class="btn-well-afe badge badge-info" ReportId="'+objReturn[i].ReportId+'" RigName="'+objReturn[i].RigName+'"  ReportDate="'+formattedReportDate+'">Detail</label> </td>  </tr> '+  
+				  '<tr><td width="50%" colspan="2"  style="font-size:15px;text-align: right;color: #002e66;"><label class="btn-well-afe badge badge-info"   ReportId="'+objReturn[i].ReportId+'" RigName="'+objReturn[i].RigName+'"  ReportDate="'+formattedReportDate+'">Detail</label> </td>  </tr> '+  
 				  
 				  
 				  

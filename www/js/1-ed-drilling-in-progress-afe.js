@@ -30,6 +30,7 @@ var dataWellName = localStorage.getItem("dataWellName");
  var dtWellAllTimeBreakdown= [];
  var dtWellAllWeather= [];
   
+ var dtWellAllGas = [];
   
 const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "Agustus", "September", "Oktober", "November", "Desember"];
   
@@ -43,6 +44,7 @@ const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "
 document.getElementById("OperatorNameAFE").innerHTML = OperatorName2; 
 document.getElementById("strNameAFE").innerHTML = dataWellName; 
 document.getElementById("FieldNameAFE").innerHTML = FieldName2;  
+document.getElementById("ReportDateAFE").innerHTML = ReportDate;  
 
 
 $$.ajax({ 
@@ -291,9 +293,9 @@ let currentMudTime=  new Date(objReturnDrillingFluid[i].MudTime);
 				 '<tbody> '+
 				 '<tr>'+
 				  '<tr><td width="50%"><b>Order No: <br></b> '+objReturnDrillingFluid[i].OrderNo+'   </td> <td><b>Mud Type: <br></b> '+objReturnDrillingFluid[i].MudType+'   </td></tr> '+
-				  '<tr><td width="50%"><b>Mud Time: <br></b> '+formattedMudTime+'  </td> <td><b>MW In: <br></b> '+objReturnDrillingFluid[i].MWIn+' '+objReturnDrillingFluid[i].UOMMWIn+'  </td></tr> '+
-				  '<tr><td width="50%"><b>MW Out: <br></b> '+objReturnDrillingFluid[i].MWOut+' '+objReturnDrillingFluid[i].UOMMWOut+'  </td> <td><b>Temp In: <br></b> '+objReturnDrillingFluid[i].TempIn+' '+objReturnDrillingFluid[i].UOMTempIn+'  </td></tr> '+ 
-				  '<tr><td width="50%"><b>Temp Out: <br></b> '+objReturnDrillingFluid[i].TempOut+' '+objReturnDrillingFluid[i].UOMTempOut+'  </td> <td><b>Fluid Loss: <br></b> '+objReturnDrillingFluid[i].FluidLoss+' '+objReturnDrillingFluid[i].UOMFluidLoss+'  </td></tr> '+ 
+				  '<tr><td width="50%"> <b>MW In: <br></b> '+objReturnDrillingFluid[i].MWIn+' '+objReturnDrillingFluid[i].UOMMWIn+'  </td><td><b>MW Out: <br></b> '+objReturnDrillingFluid[i].MWOut+' '+objReturnDrillingFluid[i].UOMMWOut+'</td></tr> '+
+				  '<tr><td width="50%">  <b>Temp In: <br></b> '+objReturnDrillingFluid[i].TempIn+' '+objReturnDrillingFluid[i].UOMTempIn+'  </td><td><b>Temp Out: <br></b> '+objReturnDrillingFluid[i].TempOut+' '+objReturnDrillingFluid[i].UOMTempOut+' </td></tr> '+ 
+				  '<tr><td width="50%">  <b>Fluid Loss: <br></b> '+objReturnDrillingFluid[i].FluidLoss+' '+objReturnDrillingFluid[i].UOMFluidLoss+'  </td></tr> '+ 
 				 // '<tr><td colspan="2"><b>Temp Out: <br></b> '+objReturnDrillingFluid[i].TempOut+' '+objReturnDrillingFluid[i].UOMTempOut+'  </td> <td><b>Pres Grad: <br></b> '+objReturnDrillingFluid[i].PresGrad+' '+objReturnDrillingFluid[i].UOMPresGrad+'  </td></tr> '+ 
 				//  '<tr><td width="50%"><b>Visc: <br></b> '+objReturnDrillingFluid[i].Visc+' '+objReturnDrillingFluid[i].UOMVisc+'  </td> <td><b>PV: <br></b> '+objReturnDrillingFluid[i].PV+' '+objReturnDrillingFluid[i].UOMPV+'  </td></tr> '+ 
 				//  '<tr><td width="50%"><b>YP: <br></b> '+objReturnDrillingFluid[i].YP+' '+objReturnDrillingFluid[i].UOMYP+'  </td> <td><b>Gels 10 Sec: <br></b> '+objReturnDrillingFluid[i].Gels10Sec+' '+objReturnDrillingFluid[i].UOMGels10Sec+'  </td></tr> '+ 
@@ -1006,4 +1008,79 @@ document.getElementById("data-well-weather").innerHTML =dtWellAllWeather.join(" 
     }
   });
 */
+
+
+
+
+ 
+var dtWellAllLithology=[];
+	   var dtWellReportLithology='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
+			 	'<div class="card-title" > DGR Lithology</div>	';
+			 dtWellAllLithology.push(dtWellReportLithology); 
+				
+		 
+	     dtWellReportLithology= '</div>';  
+			 dtWellAllLithology.push(dtWellReportLithology); 
+document.getElementById("data-well-Lithology").innerHTML =dtWellAllLithology.join(" ");
+  
+	
+ 
+var dtWellAllFormation=[];
+	   var dtWellFormation='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
+			 	'<div class="card-title" >DGR  Formation</div>	';
+			 dtWellAllFormation.push(dtWellFormation); 
+		 
+	     dtWellFormation= '</div>';  
+			 dtWellAllFormation.push(dtWellFormation); 
+document.getElementById("data-well-Formation").innerHTML =dtWellAllFormation.join(" ");
+  
+
+$$.ajax({ 
+ type: "POST",
+        url:  myApp.getWebApi('APPS-GET-Well-Period-Report-DGR-Gas'),
+        data: {"txtReportId":""+ReportId+""} ,
+    
+    timeout: (5 * 60 * 1000),
+    success: function (data, status, xhr) {
+
+      console.log(data);
+      var objReturnBitRecord = JSON.parse(data);
+
+ 
+	   var dtWellReportDGR='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
+			 	'<div class="card-title" > DGR Gas</div>	';
+			 dtWellAllGas.push(dtWellReportDGR); 
+
+		  for (i = 0; i < objReturnBitRecord.length; i++) { 
+	  
+	     dtWellReportDGR='<table style="font-size:12px" >	'+
+				 '<tbody> '+
+				 '<tr>'+
+				  '<tr><td width="50%"><b>Peak Gas: <br></b> '+objReturnBitRecord[i].PeakGas+' '+objReturnBitRecord[i].UOMPeakGas+'  </td> <td><b>BG Gas: <br></b> '+objReturnBitRecord[i].BGGas+'  '+objReturnBitRecord[i].UOMBGGas+'  </td></tr> '+
+				  '<tr><td width="50%"><b>MG Gas: <br></b> '+objReturnBitRecord[i].MGGas+' '+objReturnBitRecord[i].UOMMGGas+' </td> <td><b>Remark: <br></b> '+objReturnBitRecord[i].Remark+'  </td></tr> '+
+				   
+				 
+				 '</tbody></table>';
+				
+			 dtWellAllGas.push(dtWellReportDGR); 
+			 
+      myApp.hidePreloader();
+} 
+ 
+	     dtWellReportDGR= '</div>';  
+			 dtWellAllGas.push(dtWellReportDGR); 
+document.getElementById("data-well-dgr-gas").innerHTML =dtWellAllGas.join(" ");
+ 
+    },
+
+    error: function (xhr, status) {
+      console.log(' failed')
+      myApp.hidePreloader();
+    },
+    complete: function (xhr, status) {
+      myApp.hidePreloader();
+    }
+  });
+
+	
 }); 

@@ -16,7 +16,7 @@ var WellName = localStorage.getItem("dataWellName");
 document.getElementById("strNamePraChart").innerHTML = WellName;
 document.getElementById("strOperatorNameChart").innerHTML = OperatorName;
 document.getElementById("strFieldNameChart").innerHTML = FieldName;
-	 
+  
  $$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Schedule-Detail'),
@@ -59,8 +59,8 @@ document.getElementById("strFieldNameChart").innerHTML = FieldName;
       myApp.hidePreloader();
 } 
  var foot='</table>  </div> </div>';
-			 dtWellAllDetailChart.push(dtWelldtl2); 
-document.getElementById("data-well-pra-detail2").innerHTML =dtWellAllDetailChart.join(" ");
+			 dtWellAllDetailChart.push(foot); 
+document.getElementById("data-well-pra-detail-chart").innerHTML =dtWellAllDetailChart.join(" ");
  
     },
 
@@ -72,7 +72,7 @@ document.getElementById("data-well-pra-detail2").innerHTML =dtWellAllDetailChart
       myApp.hidePreloader();
     }
   });
-
+ 
 
 
  
@@ -80,7 +80,9 @@ var chart2;
 
 
  function CreateChart(categories, series1, namaBar) {
+ let data = series1
 
+    const sum = data.reduce((sum, data) => sum + data);
     chart2 = new Highcharts.Chart({
         chart: {
             renderTo: 'container-bar', 
@@ -97,6 +99,20 @@ var chart2;
         categories: categories
     },
     yAxis: {
+        labels: {
+          formatter: function() {
+            const series = this.chart.series;
+            const percentage = Math.round(this.value / sum * 100);
+            return percentage
+          } 
+        },
+        tickPositioner() {
+          const tickPositions = [];
+          for (let i = 1; i < 11; i++) {
+            tickPositions.push(sum / 10 * i)
+          }
+          return tickPositions
+        },
         min: 0,
         title: {
             text: 'Percentage (%)'

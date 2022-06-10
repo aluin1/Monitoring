@@ -6,6 +6,8 @@ var dataid = localStorage.getItem("dataid");
 var dataname = localStorage.getItem("dataname");
 var dataWellName = localStorage.getItem("dataWellName"); 
 var ChartUrl = localStorage.getItem("ChartUrl"); 
+var OperatorName = localStorage.getItem("OperatorName");
+var FieldName = localStorage.getItem("FieldName");
 
  
  var dtWellAllReport = [];
@@ -39,8 +41,9 @@ $$('.pb-popup-dark').on('click', function () {
 			  
 document.getElementById("ChartUrl").innerHTML = dtWellAllReportChart; 
 			 
-document.getElementById("dataWellName").innerHTML = dataWellName; 
-document.getElementById("dataname").innerHTML = dataname; 
+document.getElementById("OperatorNameReport").innerHTML = OperatorName; 
+document.getElementById("FieldNameReport").innerHTML = FieldName; 
+document.getElementById("strNameReport").innerHTML = dataWellName;  
 
 
 $$.ajax({ 
@@ -92,7 +95,7 @@ let currentRigReleaseDate=  new Date(objReturn[i].RigReleaseDate);
 				    '<tr><td width="50%" colspan="2"><br> </td>  </tr> '+  
 				  '<tr><td width="50%" colspan="2"><b>Daily Forecast: <br></b> '+objReturn[i].DailyForecast+' </b> </td>  </tr> '+  
 				    '<tr><td width="50%" colspan="2"><br> </td>  </tr> '+  
-				  '<tr><td width="50%" colspan="2"  style="font-size:15px;text-align: right;color: #002e66;"><label class="btn-well-afe badge badge-info" ReportId="'+objReturn[i].ReportId+'" RigName="'+objReturn[i].RigName+'"  ReportDate="'+formattedReportDate+'">Detail</label> </td>  </tr> '+  
+				  '<tr><td width="50%" colspan="2"  style="font-size:15px;text-align: right;color: #002e66;"><label class="btn-well-afe badge badge-info"   ReportId="'+objReturn[i].ReportId+'" RigName="'+objReturn[i].RigName+'"  ReportDate="'+formattedReportDate+'">Detail</label> </td>  </tr> '+  
 				  
 				  
 				  
