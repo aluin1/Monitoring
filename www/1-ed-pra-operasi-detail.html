@@ -71,6 +71,196 @@
     -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
 }
+
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 320px;
+    max-width: 660px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+
+
+
+.svg-item {
+    width: 100%;
+    font-size: 16px;
+    margin: 0 auto;
+    animation: donutfade 1s;
+}
+
+@keyframes donutfade {
+  /* this applies to the whole svg item wrapper */
+    0% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .svg-item {
+        width: 80%;
+    }
+}
+
+.donut-ring {
+    stroke: #EBEBEB;
+}
+
+.donut-segment {
+    transform-origin: center;
+    stroke: #FF6200;
+}
+
+.donut-segment-2 {
+    stroke: aqua;
+    animation: donut1 3s;
+}
+
+.donut-segment-3 {
+    stroke: #d9e021;
+    animation: donut2 3s;
+}
+
+.donut-segment-4 {
+    stroke: #ed1e79;
+    animation: donut3 3s;
+}
+
+.segment-1{fill:#ccc;}
+.segment-2{fill:aqua;}
+.segment-3{fill:#d9e021;}
+.segment-4{fill:#ed1e79;}
+
+.donut-percent {
+    animation: donutfadelong 1s;
+}
+
+@keyframes donutfadelong {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes donut1 {
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 69, 31;
+    }
+}
+
+@keyframes donut2 {
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 30, 70;
+    }
+}
+
+@keyframes donut3{
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 1, 99;
+    }
+}
+
+.donut-text {
+    font-family: Arial, Helvetica, sans-serif;
+    fill: #FF6200;
+}
+.donut-text-1 {
+    fill: aqua;
+}
+.donut-text-2 {
+    fill: #d9e021;
+}
+.donut-text-3 {
+    fill: #ed1e79;
+}
+
+.donut-label {
+    font-size: 0.28em;
+    font-weight: 700;
+    line-height: 1;
+    fill: #000;
+    transform: translateY(0.25em);
+}
+
+.donut-percent {
+    font-size: 0.5em;
+    line-height: 1;
+    transform: translateY(0.5em);
+    font-weight: bold;
+}
+
+.donut-data {
+    font-size: 0.12em;
+    line-height: 1;
+    transform: translateY(0.5em);
+    text-align: center;
+    text-anchor: middle;
+    color:#666;
+    fill: #666;
+    animation: donutfadelong 1s;
+}
+
+
+
+
+/* ---------- */
+/* just for this presentation */
+html { text-align:center; }
+.svg-item {
+  max-width:30%;
+  display:inline-block;
+}
 </style>   
     <div class="list-block"   >
   <div class="row">
@@ -89,7 +279,9 @@
 				<tr> 
 				<td><h4 class="card-title" align="center" style="font-size:20px;margin-bottom: 0rem;text-align: left; ">Exploration Drilling</h4>
 						  <h4 class="card-title" style="font-size:20px;margin-bottom: 0rem;font-size:14px;"><span >Pra-Operasi</span></h4>  
-						  <h4 class="card-title"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="strNamePra"> </span></h4>
+						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="strOperatorName"> </span></h4>
+						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="strFieldName"> </span></h4>
+						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="strNamePra"> </span></h4>
 				</td>
 				</tr>
 				</table>
@@ -98,12 +290,17 @@
               </div>
 </div>
 
-   
- <div id="data-well-pra-detail"  >  
-  </div>  
+     <!-- 
+   <div class="card ">
+                <div class="card-body" > 
+			    <div id="container-donut"></div>
+	    
+              </div> 
+</div>  
+ !-->
+			    <div id="data-well-pra-detail"  > </div>  
+         
   
-  
- 
 
 </div>
          

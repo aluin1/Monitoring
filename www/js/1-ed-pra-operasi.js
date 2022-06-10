@@ -80,9 +80,11 @@ $$.ajax({
 				'TotalReport="'+objReturn[i].TotalReport+'"  '+
 				'WaterDepth="'+objReturn[i].WaterDepth+' '+objReturn[i].UOMWaterDepth+'" '+
 				'LastDDR="'+objReturn[i].LastReportDate+'"  '+
-				'WellImageUrl="'+objReturn[i].WellImageUrl+'"> '+
+				'WellImageUrl="'+objReturn[i].WellImageUrl+'"  '+
+				'OperatorName="'+objReturn[i].OperatorName+'"  '+
+				'FieldName="'+objReturn[i].FieldName+'"> '+
 				'<td style="padding: 10px;"> '+
-				'<b>'+objReturn[i].WellName+' - '+objReturn[i].FieldName+'</b></td>'+
+				'<b>'+objReturn[i].WellName+'  </b></td>'+
 				'<td style="font-size:15px;text-align: right;color: #002e66;padding: 10px;"> <span class="mdi mdi-arrow-right-bold-circle-outline" style="font-size: 25px;"></span></td>'+
 				'</tr></tbody></table>'+
 				'</div></div>';
@@ -131,6 +133,8 @@ $$('.btn-detail-pra').on('click', function () {
 	   var WaterDepth  = $$(this).attr("WaterDepth");
 	   var LastDDR  = $$(this).attr("LastDDR");
 	   var WellImageUrl  = $$(this).attr("WellImageUrl");
+	   var OperatorName  = $$(this).attr("OperatorName");
+	   var FieldName  = $$(this).attr("FieldName");
  
  //mainView.router.loadPage('1-ed-drilling-in-progress-detail.html?WellId='+WellId+'&&WellName='+WellName+'&&ContractorName='+ContractorName+'&&AFENumber='+AFENumber);
 
@@ -151,6 +155,8 @@ $$('.btn-detail-pra').on('click', function () {
 	localStorage.setItem('WaterDepth', WaterDepth);
 	localStorage.setItem('LastDDR', LastDDR);
 	localStorage.setItem('WellImageUrl', WellImageUrl);
+	localStorage.setItem('OperatorName', OperatorName);
+	localStorage.setItem('FieldName', FieldName);
 	
 	mainView.router.loadPage('1-ed-pra-operasi-detail.html');
 });

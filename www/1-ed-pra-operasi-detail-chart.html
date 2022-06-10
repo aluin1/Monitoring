@@ -1,7 +1,8 @@
-<div data-page="1-ed-drilling-in-progress-detail" class="page toolbar-fixed no-swipeback "  style="background: linear-gradient(to right, #d8d8d8, #d8d8d8);" >
+<div data-page="1-ed-pra-operasi-detail-chart" class="page toolbar-fixed no-swipeback "  style="background: linear-gradient(to right, #d8d8d8, #d8d8d8);" >
 <div class="navbar">
     <div class="navbar-inner" style="background: linear-gradient(to right,#63cad4, #047edf);padding: 0px;">
 	
+	 
 	<div class="left  " style="padding:10px; color:#002e66" >
 	  <a href="#" class="  back sliding" style="color:#fff"  >
           <span class="mdi  mdi-chevron-left"></span> Back
@@ -70,7 +71,52 @@
     -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
 }
-</style>       
+
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 320px;
+    max-width: 660px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+</style>   
     <div class="list-block"   >
   <div class="row">
    
@@ -87,10 +133,10 @@
 			
 				<tr> 
 				<td><h4 class="card-title" align="center" style="font-size:20px;margin-bottom: 0rem;text-align: left; ">Exploration Drilling</h4>
-						  <h4 class="card-title"  style="font-size:20px;margin-bottom: 0rem;font-size:14px;"><span >Drilling in Progress</span></h4>   
-						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="OperatorNameDrill"> </span></h4>
-						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="FieldNameDrill"> </span></h4>
-						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="strNameDrill"> </span></h4>
+						  <h4 class="card-title" style="font-size:20px;margin-bottom: 0rem;font-size:14px;"><span >Pra-Operasi</span></h4>  
+						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="strOperatorNameChart"> </span></h4>
+						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="strFieldNameChart"> </span></h4>
+						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="strNamePraChart"> </span></h4>
 				</td>
 				</tr>
 				</table>
@@ -98,67 +144,17 @@
 	    
               </div>
 </div>
-
- <div id="data-well-dtl"  >  
-  </div>
-   
-  <div id="data-well-detail"  >  
-  </div> 
-
- <!--
- 
- <div class="card  ">
-                <div class="card-body" >
-				<table class="table">	<tbody>
-				<tr><td>
-				Status 21 Des 2021<br>
-04.00 WIB
-
-				</td></tr> 
-				 </tbody></table>
+  <div class="card ">
+                <div class="card-body" > 
+			    <div id="container-bar"></div>
+	    
               </div>
-</div>
+</div>  
+			    <div id="data-well-pra-detail2"  >   
+  </div>  
+               
+  
 
-
- <div class="card  ">
-                <div class="card-body" >
-				<table class="table">	<tbody> 
-				<tr><td>
-				Rig Release tmt 23 Des 21, status
-dry hole well, permanent P&A.<br>
-Spud Date : 27 September 2021<br>
-Plan TD : 8511 ftMD /8360 ftTVD<br>
-Last Depth : 8496 ftMD /8346 ftTVD<br>
-TD Date : 18 Nov 2021<br>
-Plan Days : 120 days<br>
-Actual Days : 87 days (72.5%)<br>
-Budget : USD 27,000,000<br>
-Cum. Cost : USD 18,326,385.29
-(67.88%)
-
-				</td></tr>
-				</td></tr> 
-				 </tbody></table>
-              </div>
-</div>
-
-
- <div class="card  ">
-                <div class="card-body" >				
-				<center>
-				<img src="images/dip1.png" width="280">  </center>
-              </div>
-</div>
-
- 
- <div class="card  ">
-                <div class="card-body" >					
-				<center>
-				<img src="images/dip2.png" width="280">  </center>
-              </div>
-</div>
-
-!-->
 
 </div>
          

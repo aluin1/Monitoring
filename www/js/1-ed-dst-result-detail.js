@@ -16,6 +16,8 @@ var AFENumber =localStorage.getItem("AFENumber");
  var WaterDepth = localStorage.getItem("WaterDepth"); 
  var LastDDR = localStorage.getItem("LastDDR");
  var WellImageUrl = localStorage.getItem("WellImageUrl"); 
+ var OperatorNameDST = localStorage.getItem("OperatorNameDST"); 
+ var FieldNameDST = localStorage.getItem("FieldNameDST"); 
 
 
  
@@ -24,6 +26,8 @@ const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "
  
  var dtWellAllDetail = [];
  
+document.getElementById("OperatorNameDST").innerHTML = OperatorNameDST;
+document.getElementById("FieldNameDST").innerHTML = FieldNameDST;
 document.getElementById("strNameDst").innerHTML = WellName;
   $$.ajax({ 
  type: "POST",
@@ -53,7 +57,7 @@ document.getElementById("strNameDst").innerHTML = WellName;
 				 '<tbody> '+ 
 				  '<tr><td ><b  > Result Date: </b> <br>'+formattedResultDate+'  </td> <td><b  >Result Note: </b> <br>'+objReturnDst[i].ResultNote+'  </td></tr>'+
 				  '<tr><td colspan="2" style="text-align: right;" >  <br> <img src="'+objReturnDst[i].ResultLink+'" style=" width: 100%;    height: 180px;    border-radius: 0;" >'+
-				  '    <br> <br>  <label class="btn-popup badge badge-info"  dataResult="'+objReturnDst[i].ResultLink+'">view</label>  </td>   </tr>'+ 
+				  '    <br> <br>  <label class="btn-popup badge badge-info" dataResultId="'+objReturnDst[i].ResultId+'" dataResult="'+objReturnDst[i].ResultLink+'">view</label>  </td>   </tr>'+ 
 			 
 				  '</tbody></table>'+
 				 '</div> ';  
@@ -71,8 +75,10 @@ document.getElementById("data-well-dst-detail").innerHTML =dtWellAllDetail.join(
 $$('.btn-popup').on('click', function () {
 	
 	   var dataResult  = $$(this).attr("dataResult");
+	   var dataResultId  = $$(this).attr("dataResultId");
 	
       console.log(dataResult);
+      console.log(dataResultId);
 	  
  var myPhotoBrowserPopupDark = myApp.photoBrowser({
 	 

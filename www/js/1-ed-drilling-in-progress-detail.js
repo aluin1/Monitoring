@@ -27,6 +27,10 @@ var AFENumber =localStorage.getItem("AFENumber");
  var WaterDepth = localStorage.getItem("WaterDepth"); 
  var LastDDR = localStorage.getItem("LastDDR");
  var WellImageUrl = localStorage.getItem("WellImageUrl"); 
+var OperatorName = localStorage.getItem("OperatorName");
+var FieldName = localStorage.getItem("FieldName");
+
+
 let formattedLastDDR = "";
 const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "Agustus", "September", "Oktober", "November", "Desember"];
  
@@ -56,7 +60,9 @@ let currentLastDDR=  new Date(LastDDR);
   
 			 dtWellAll2.push(dtWell2);
 			 
-document.getElementById("strName").innerHTML = WellName;
+document.getElementById("OperatorNameDrill").innerHTML = OperatorName;
+document.getElementById("FieldNameDrill").innerHTML = FieldName;
+document.getElementById("strNameDrill").innerHTML = WellName;
 document.getElementById("data-well-dtl").innerHTML = dtWellAll2.join(" ");
 
 
