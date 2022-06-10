@@ -46,15 +46,15 @@ var selisih =100-parseInt(objReturnPra[i].FocusItemProgressInt);
 			 var percen=parseInt(objReturnPra[i].FocusItemProgressInt);
 			if (percen <50)
 			{
-				var segment="donut-segment-2";
-				var txtSegment="donut-text-2";
+				var segment="donut-segment-min";
+				var txtSegment="donut-text-min";
 			}else if (percen >=50 && percen <100)
 			{
-				var segment="donut-segment-3";
-				var txtSegment="donut-text-3";
+				var segment="donut-segment-mid";
+				var txtSegment="donut-text-mid";
 			}else{
-				var segment="donut-segment-4";
-				var txtSegment="donut-text-4";
+				var segment="donut-segment-max";
+				var txtSegment="donut-text-max";
 			}
 			
 			
