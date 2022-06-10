@@ -79,10 +79,7 @@ document.getElementById("data-well-pra-detail-chart").innerHTML =dtWellAllDetail
 var chart2;
 
 
- function CreateChart(categories, series1, namaBar) {
- let data = series1
-
-    const sum = data.reduce((sum, data) => sum + data);
+ function CreateChart(categories, series1, namaBar) { 
     chart2 = new Highcharts.Chart({
         chart: {
             renderTo: 'container-bar', 
@@ -98,21 +95,8 @@ var chart2;
     xAxis: {
         categories: categories
     },
-    yAxis: {
-        labels: {
-          formatter: function() {
-            const series = this.chart.series;
-            const percentage = Math.round(this.value / sum * 100);
-            return percentage
-          } 
-        },
-        tickPositioner() {
-          const tickPositions = [];
-          for (let i = 1; i < 11; i++) {
-            tickPositions.push(sum / 10 * i)
-          }
-          return tickPositions
-        },
+    yAxis: { 
+	 max: 100,
         min: 0,
         title: {
             text: 'Percentage (%)'
