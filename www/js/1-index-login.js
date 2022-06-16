@@ -1,10 +1,8 @@
 
- 
+
 
 myApp.onPageInit('1-index-login', function(page) { 
-
- 
- 
+  
 	$$('.btndata').on('click', function () {
  
  mainView.router.loadPage('1-homepage.html');

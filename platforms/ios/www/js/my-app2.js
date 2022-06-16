@@ -4,18 +4,92 @@ var myApp = new Framework7({
     tapHold: true,
     tapHoldDelay: 1000,
     tapHoldPreventClicks: true,
-   //pushState : true,
+  //  pushState : true,
      //precompileTemplates: true,
-    cache: false, 
+    cache: false,
+	/*methods: {
+        onBackKeyDown: function() {
 
+            var leftp = app.panel.left && app.panel.left.opened;
+            var rightp = app.panel.right && app.panel.right.opened;
+
+            if ( leftp || rightp ) {
+
+                app.panel.close();
+                return false;
+            }else if ($$('.modal-in').length > 0) {
+              
+                app.dialog.close();
+                app.popup.close();
+                return false;
+            } else if (app.views.main.router.url == '/1-home/') {
+
+                    navigator.app.exitApp();
+            } else {
+
+                mainView.router.back();
+           }
+	 } }*/
+	
 });
 
- var valueExit="";
 var $$ = Dom7;
 var mainView = myApp.addView('.view-main', {
     dynamicNavbar: false
-}); 
+});
+
+ //document.addEventListener("backbutton", onBackKeyDown, false);
  
+ $(window).on("navigate", function (event, data) {
+	 
+var direction = data.state.direction;
+if (direction == 'back') {
+ var leftp = app.panel.left && app.panel.left.opened;
+            var rightp = app.panel.right && app.panel.right.opened;
+
+            if ( leftp || rightp ) {
+
+                app.panel.close();
+                return false;
+            }else if ($$('.modal-in').length > 0) {
+              
+                app.dialog.close();
+                app.popup.close();
+                return false;
+            } else if (app.views.main.router.url == '/1-home/') {
+
+                    navigator.app.exitApp();
+            } else {
+
+                mainView.router.back();
+           }
+}
+});
+
+/*
+function onBackKeyDown() {
+	 var leftp = app.panel.left && app.panel.left.opened;
+            var rightp = app.panel.right && app.panel.right.opened;
+
+            if ( leftp || rightp ) {
+
+                app.panel.close();
+                return false;
+            }else if ($$('.modal-in').length > 0) {
+              
+                app.dialog.close();
+                app.popup.close();
+                return false;
+            } else if (app.views.main.router.url == '/1-home/') {
+
+                    navigator.app.exitApp();
+            } else {
+
+                mainView.router.back();
+           }
+}
+ */
+
  var strUsername = localStorage.getItem("LogonUsername");
 var globalApiDefaultWeb = 'http://monitor.gura.me';
 var globalApiSubUrl = '/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=';

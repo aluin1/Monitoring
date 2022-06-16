@@ -26,7 +26,7 @@ const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "
  
  var dtWellAllDetail = [];
  
-document.getElementById("OperatorNameDST").innerHTML = OperatorNameDST;
+//document.getElementById("OperatorNameDST").innerHTML = OperatorNameDST;
 document.getElementById("FieldNameDST").innerHTML = FieldNameDST;
 document.getElementById("strNameDst").innerHTML = WellName;
   $$.ajax({ 

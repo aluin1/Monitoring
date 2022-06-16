@@ -14,7 +14,7 @@ var WellName = localStorage.getItem("dataWellName");
  
  var dtWellAllDetailChart = [];
 document.getElementById("strNamePraChart").innerHTML = WellName;
-document.getElementById("strOperatorNameChart").innerHTML = OperatorName;
+//document.getElementById("strOperatorNameChart").innerHTML = OperatorName;
 document.getElementById("strFieldNameChart").innerHTML = FieldName;
   
  $$.ajax({ 

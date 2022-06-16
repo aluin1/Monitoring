@@ -60,7 +60,7 @@ let currentLastDDR=  new Date(LastDDR);
   
 			 dtWellAll2.push(dtWell2);
 			 
-document.getElementById("OperatorNameDrill").innerHTML = OperatorName;
+//document.getElementById("OperatorNameDrill").innerHTML = OperatorName;
 document.getElementById("FieldNameDrill").innerHTML = FieldName;
 document.getElementById("strNameDrill").innerHTML = WellName;
 document.getElementById("data-well-dtl").innerHTML = dtWellAll2.join(" ");

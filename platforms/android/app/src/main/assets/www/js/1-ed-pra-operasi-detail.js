@@ -13,7 +13,7 @@ var FieldName = localStorage.getItem("FieldName");
  
  var dtWellAllDetail = [];
 document.getElementById("strNamePra").innerHTML = WellName;
-document.getElementById("strOperatorName").innerHTML = OperatorName;
+//document.getElementById("strOperatorName").innerHTML = OperatorName;
 document.getElementById("strFieldName").innerHTML = FieldName;
 	 
  $$.ajax({ 
@@ -32,9 +32,9 @@ document.getElementById("strFieldName").innerHTML = FieldName;
 	   
 	   '<table class="table">'+
 			'	<tr style="background:linear-gradient(to right,#63cad4, #047edf);color:#fff;">'+
-			'	<td>Rencana Kegiatan</td>'+
+			'	<td>Activity</td>'+
 			'	<td>Progress</td>'+
-			'	<td>Button</td>'+
+			'	<td>Detail</td>'+
 			'	</tr>';
 			 dtWellAllDetail.push(head); 
  

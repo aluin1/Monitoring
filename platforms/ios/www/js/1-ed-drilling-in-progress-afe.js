@@ -41,7 +41,7 @@ const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "
 		 
 	  
 			 
-document.getElementById("OperatorNameAFE").innerHTML = OperatorName2; 
+//document.getElementById("OperatorNameAFE").innerHTML = OperatorName2; 
 document.getElementById("strNameAFE").innerHTML = dataWellName; 
 document.getElementById("FieldNameAFE").innerHTML = FieldName2;  
 document.getElementById("ReportDateAFE").innerHTML = ReportDate;  

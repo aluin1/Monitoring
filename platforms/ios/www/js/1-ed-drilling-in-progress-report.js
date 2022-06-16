@@ -41,7 +41,7 @@ $$('.pb-popup-dark').on('click', function () {
 			  
 document.getElementById("ChartUrl").innerHTML = dtWellAllReportChart; 
 			 
-document.getElementById("OperatorNameReport").innerHTML = OperatorName; 
+//document.getElementById("OperatorNameReport").innerHTML = OperatorName; 
 document.getElementById("FieldNameReport").innerHTML = FieldName; 
 document.getElementById("strNameReport").innerHTML = dataWellName;  
 

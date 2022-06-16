@@ -1,8 +1,7 @@
-   
+ 
 ///load service Page  
 myApp.onPageInit("1-home", function(page){
-	 
-
+	
 var strUsername = localStorage.getItem("LogonUsername");
 var strNip = localStorage.getItem("LogonNip");
 var strEMPLOYEE_NAMA = localStorage.getItem("Logon-EMPLOYEE_NAMA");
