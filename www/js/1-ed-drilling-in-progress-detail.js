@@ -46,7 +46,7 @@ let currentLastDDR=  new Date(LastDDR);
 	}
 	var dtWell2 = '<div class="card" style="padding: 10px;margin: 10px 10px 0px 10px;" >'+
 				 '<table style="font-size:12px">'+
-				  '<tr><td width="50%"><b>Contractor: </b><br>'+ContractorName+' </td><td><b>AFE No:</b> <br> '+AFENumber+' </td></tr> '+
+				  '<tr><td width="50%"><b>Rig Contractor: </b><br>'+ContractorName+' </td><td><b>AFE No:</b> <br> '+AFENumber+' </td></tr> '+
 				  '<tr><td> </td><td><b>AFE Cost:</b><br>  '+AFECost+'  </td></tr> '+
 				  '<tr><td> </td><td><b>Cum. Cost: </b><br> '+CummulativeCost+'  </td></tr> '+
 				 	 	 '<tr><td><b>Well Type: </b><br>'+WellType+' </td><td></td></tr> '+
@@ -98,7 +98,7 @@ let currentEndDate =  new Date(objReturn[i].EndDate);
 			 	'<table style="font-size:12px">	'+
 				 '<tbody> '+ 
 				  '<tr><td colspan="2"><b  > Activity Name: </b> <br>'+objReturn[i].WellPeriodName+'  </td> </tr>'+
-				  '<tr><td width="50%"><b  > Start Date: </b> <br>'+formattedStartDate+'  </td> <td><b  > End Date: </b> <br>'+formattedEndDate+'  </td> </tr>'+
+				  '<tr><td width="50%"><b  > (Est) Spud Date: </b> <br>'+formattedStartDate+'  </td> <td><b  >  (Est) Rig Release Date: </b> <br>'+formattedEndDate+'  </td> </tr>'+
 				  '<tr><td colspan="2"> <br>   </td> </tr>'+
 				 '<tr><td  colspan="2" style="font-size:15px;text-align: right;color: #002e66;"> <label class="btn-well-report badge badge-info"   dataWellName="'+WellName+'" data-name="'+objReturn[i].WellPeriodName+'" data-id="'+objReturn[i].PeriodId+'" ChartUrl="'+objReturn[i].ChartUrl+'">Report</label></td></tr>'+
 			 			  '</tbody></table>'+
