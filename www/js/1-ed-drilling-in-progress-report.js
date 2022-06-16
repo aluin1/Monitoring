@@ -1,7 +1,15 @@
    
 ///load service Page  
 myApp.onPageInit("1-ed-drilling-in-progress-report", function(page){ 
- 
+  myApp.showPreloader("<div style='margin-bottom:-15px'><img src='icon/ic_launcher.png' width='50'></div><p style='color: #047edf; font-size: 12px;  margin: 30px 0 0 ; '>Loading Aplikasi</p>");
+    setTimeout(function () {
+	console.log(window.location.href);  
+	
+	const getLastItem = thePath => thePath.substring(thePath.lastIndexOf('/') + 1);
+	console.log(getLastItem(window.location.href)); 	
+	localStorage.setItem('FirstUrl', getLastItem(window.location.href));
+	myApp.hidePreloader();
+		 });
 var dataid = localStorage.getItem("dataid");
 var dataname = localStorage.getItem("dataname");
 var dataWellName = localStorage.getItem("dataWellName"); 
@@ -58,7 +66,7 @@ $$.ajax({
       var objReturn = JSON.parse(data);
 
  
-const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "Agustus", "September", "Oktober", "November", "Desember"];
+const months = ["Januari", "Februari", "Maret","April", "Mei", "Juni", "juli", "Agustus", "September", "Oktober", "November", "Desember"];
  
 let formattedReportDate="";
 let formattedSpudDate="";

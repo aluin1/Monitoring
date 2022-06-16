@@ -1,7 +1,15 @@
    
 ///load service Page  
 myApp.onPageInit("1-ed-drilling-in-progress-afe", function(page){ 
- 
+  myApp.showPreloader("<div style='margin-bottom:-15px'><img src='icon/ic_launcher.png' width='50'></div><p style='color: #047edf; font-size: 12px;  margin: 30px 0 0 ; '>Loading Aplikasi</p>");
+    setTimeout(function () {
+	console.log(window.location.href);  
+	
+	const getLastItem = thePath => thePath.substring(thePath.lastIndexOf('/') + 1);
+	console.log(getLastItem(window.location.href)); 	
+	localStorage.setItem('FirstUrl', getLastItem(window.location.href));
+	myApp.hidePreloader();
+		 });
 var ReportId = localStorage.getItem("ReportId");
 var RigName = localStorage.getItem("RigName");
 var ReportDate = localStorage.getItem("ReportDate");
@@ -32,7 +40,7 @@ var dataWellName = localStorage.getItem("dataWellName");
   
  var dtWellAllGas = [];
   
-const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "Agustus", "September", "Oktober", "November", "Desember"];
+const months = ["Januari", "Februari", "Maret","April", "Mei", "Juni", "juli", "Agustus", "September", "Oktober", "November", "Desember"];
   
  
    
@@ -61,7 +69,14 @@ $$.ajax({
  var dtWellReport='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
 			 	'<div class="card-title" >  AFE</div>	';
 				dtWellAllAFE.push(dtWellReport);
-
+if (objReturn==""){
+	 
+	 dtWellReport='<center  style=" color: red;" ><b>No AFE </b></center>  ';
+				  
+			 dtWellAllAFE.push(dtWellReport); 
+			 
+      myApp.hidePreloader();
+}else{
 		  for (i = 0; i < objReturn.length; i++) {
       console.log(objReturn[i].AFEId); 
 	  
@@ -83,7 +98,7 @@ $$.ajax({
 			 dtWellAllAFE.push(dtWellReport); 
 			 
       myApp.hidePreloader();
-} 
+} }
  dtWellReport='</div>'; 
 				dtWellAllAFE.push(dtWellReport);
  
@@ -120,6 +135,14 @@ $$.ajax({
 			 	'<div class="card-title" >  Bit Record</div>	';
 			 dtWellAllBit.push(dtWellReportBit); 
 
+if (objReturnBitRecord==""){
+	 
+	 dtWellReport='<center  style=" color: red;" ><b>No Bit Record </b></center>  ';
+				  
+			 dtWellAllBit.push(dtWellReport); 
+			 
+      myApp.hidePreloader();
+}else{
 		  for (i = 0; i < objReturnBitRecord.length; i++) { 
 	  
 	     dtWellReportBit='<table style="font-size:12px" >	'+
@@ -140,7 +163,7 @@ $$.ajax({
 			 dtWellAllBit.push(dtWellReportBit); 
 			 
       myApp.hidePreloader();
-} 
+} } 
  
 	     dtWellReportBit= '</div>';  
 			 dtWellAllBit.push(dtWellReportBit); 
@@ -178,7 +201,14 @@ $$.ajax({
 			 	'<div class="card-title" >  Casing</div>	';
 			 dtWellAllCasing.push(dtWellReportCasing); 
 				
-				
+		if (objReturnCasing==""){
+	 
+	 dtWellReportCasing='<center  style=" color: red;" ><b>No Casing </b></center>  ';
+				  
+			 dtWellAllCasing.push(dtWellReportCasing); 
+			 
+      myApp.hidePreloader();
+}else{		
 		  for (i = 0; i < objReturnCasing.length; i++) { 
 	  
 	     dtWellReportCasing='<table style="font-size:12px" >	'+
@@ -194,7 +224,7 @@ $$.ajax({
 			 
       myApp.hidePreloader();
 } 
- 
+ } 
 
 	     dtWellReportCasing= '</div>';  
 			 dtWellAllCasing.push(dtWellReportCasing); 
@@ -282,7 +312,14 @@ $$.ajax({
 			 	'<div class="card-title" >  Drilling Fluid</div>	';
 				
 			 dtWellAllDrillingFluid.push(dtWellReportCasing); 
-				
+			if (objReturnDrillingFluid==""){
+	 
+	 dtWellReportCasing='<center  style=" color: red;" ><b>No Drilling Fluid </b></center>  ';
+				  
+			 dtWellAllDrillingFluid.push(dtWellReportCasing); 
+			 
+      myApp.hidePreloader();
+}else{			
 		  for (i = 0; i < objReturnDrillingFluid.length; i++) { 
 		  
 
@@ -314,7 +351,7 @@ let currentMudTime=  new Date(objReturnDrillingFluid[i].MudTime);
 			 dtWellAllDrillingFluid.push(dtWellReportCasing); 
 			 
       myApp.hidePreloader();
-} 
+} } 
  
 	     dtWellReportCasing='</div>'; 
 			 dtWellAllDrillingFluid.push(dtWellReportCasing); 
@@ -348,7 +385,14 @@ $$.ajax({
 	   var dtWellReportDrillingParameters='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
 			 	'<div class="card-title" >  Drilling Parameters</div>	';
 			 dtWellAllDrillingParameters.push(dtWellReportDrillingParameters); 
-
+	if (objReturnDrilling==""){
+	 
+	 dtWellReportDrillingParameters='<center  style=" color: red;" ><b>No Drilling Parameters </b></center>  ';
+				  
+			 dtWellAllDrillingParameters.push(dtWellReportDrillingParameters); 
+			 
+      myApp.hidePreloader();
+}else{		
 		  for (i = 0; i < objReturnDrilling.length; i++) { 
 	  
 	     dtWellReportDrillingParameters='<table style="font-size:12px" >	'+
@@ -366,7 +410,7 @@ $$.ajax({
 			 dtWellAllDrillingParameters.push(dtWellReportDrillingParameters); 
 			 
       myApp.hidePreloader();
-} 
+} } 
 	     dtWellReportDrillingParameters= '</div>';  
 			 dtWellAllDrillingParameters.push(dtWellReportDrillingParameters); 
  
@@ -653,6 +697,7 @@ $$.ajax({
       console.log(data);
       var objReturnNPT = JSON.parse(data);
 
+      console.log(objReturnNPT);
  
 
 	   var dtWellReportNPT='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
@@ -671,6 +716,20 @@ $$.ajax({
 				  
 			 dtWellAllNPT.push(dtWellReportNPT); 
 			 
+			 if (objReturnNPT==""){
+				 
+				  dtWellReportNPT='<tr>'+
+				'<td style="padding:5px;text-align:right;" colspan="7"> <center  style=" color: red;" ><b>No NPT </b></center>    </td>'+
+				 
+				'</tr> ';
+				  
+				
+				 
+			 dtWellAllNPT.push(dtWellReportNPT); 
+			 
+      myApp.hidePreloader();
+			 }
+			 else{
 		  for (i = 0; i < objReturnNPT.length; i++) { 
 		  
 		  
@@ -696,7 +755,7 @@ let currentNPTEndTime=  new Date(objReturnNPT[i].NPTEndTime);
 			 dtWellAllNPT.push(dtWellReportNPT); 
 			 
       myApp.hidePreloader();
-} 
+} } 
  
 	     dtWellReportNPT='</tbody></table>'+
 		 '</div>';  
@@ -1015,7 +1074,8 @@ document.getElementById("data-well-weather").innerHTML =dtWellAllWeather.join(" 
  
 var dtWellAllLithology=[];
 	   var dtWellReportLithology='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
-			 	'<div class="card-title" > DGR Lithology</div>	';
+			 	'<div class="card-title" >  Lithology</div>	'+
+				'<center  style=" color: red;" ><b>No Lithology </b></center>';
 			 dtWellAllLithology.push(dtWellReportLithology); 
 				
 		 
@@ -1027,7 +1087,8 @@ document.getElementById("data-well-Lithology").innerHTML =dtWellAllLithology.joi
  
 var dtWellAllFormation=[];
 	   var dtWellFormation='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
-			 	'<div class="card-title" >DGR  Formation</div>	';
+			 	'<div class="card-title" >  Formation</div>	'+
+				'<center  style=" color: red;" ><b>No Formation </b></center>';
 			 dtWellAllFormation.push(dtWellFormation); 
 		 
 	     dtWellFormation= '</div>';  
@@ -1048,9 +1109,18 @@ $$.ajax({
 
  
 	   var dtWellReportDGR='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
-			 	'<div class="card-title" > DGR Gas</div>	';
+			 	'<div class="card-title" >  Gas</div>	';
 			 dtWellAllGas.push(dtWellReportDGR); 
-
+if (objReturnBitRecord==""){
+	  dtWellReportDGR='<center  style=" color: red;" ><b>No Gas </b></center>';
+				
+			 dtWellAllGas.push(dtWellReportDGR); 
+			 
+      myApp.hidePreloader();
+	
+	
+}
+else{
 		  for (i = 0; i < objReturnBitRecord.length; i++) { 
 	  
 	     dtWellReportDGR='<table style="font-size:12px" >	'+
@@ -1065,7 +1135,7 @@ $$.ajax({
 			 dtWellAllGas.push(dtWellReportDGR); 
 			 
       myApp.hidePreloader();
-} 
+} } 
  
 	     dtWellReportDGR= '</div>';  
 			 dtWellAllGas.push(dtWellReportDGR); 

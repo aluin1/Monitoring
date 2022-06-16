@@ -1,6 +1,16 @@
    
 ///load service Page  
 myApp.onPageInit("1-ed-drilling-in-progress-detail", function(page){
+	
+	 myApp.showPreloader("<div style='margin-bottom:-15px'><img src='icon/ic_launcher.png' width='50'></div><p style='color: #047edf; font-size: 12px;  margin: 30px 0 0 ; '>Loading Aplikasi</p>");
+    setTimeout(function () {
+	console.log(window.location.href);  
+	
+	const getLastItem = thePath => thePath.substring(thePath.lastIndexOf('/') + 1);
+	console.log(getLastItem(window.location.href)); 	
+	localStorage.setItem('FirstUrl', getLastItem(window.location.href));
+	myApp.hidePreloader();
+		 });
 /*	 
 var WellId = page.query.WellId;  
 var WellName = page.query.WellName;  
@@ -32,7 +42,7 @@ var FieldName = localStorage.getItem("FieldName");
 
 
 let formattedLastDDR = "";
-const months = ["Januari", "Februari", "Maret","April", "Mei", "juni", "juli", "Agustus", "September", "Oktober", "November", "Desember"];
+const months = ["Januari", "Februari", "Maret","April", "Mei", "Juni", "juli", "Agustus", "September", "Oktober", "November", "Desember"];
  
  var dtWellAllDetail = [];
  
@@ -47,7 +57,7 @@ let currentLastDDR=  new Date(LastDDR);
 	var dtWell2 = '<div class="card" style="padding: 10px;margin: 10px 10px 0px 10px;" >'+
 				 '<table style="font-size:12px">'+
 				  '<tr><td width="50%"><b>Rig Contractor: </b><br>'+ContractorName+' </td><td><b>AFE No:</b> <br> '+AFENumber+' </td></tr> '+
-				  '<tr><td> </td><td><b>AFE Cost:</b><br>  '+AFECost+'  </td></tr> '+
+				  '<tr><td> </td><td><b>AFE Budget:</b><br>  '+AFECost+'  </td></tr> '+
 				  '<tr><td> </td><td><b>Cum. Cost: </b><br> '+CummulativeCost+'  </td></tr> '+
 				 	 	 '<tr><td><b>Well Type: </b><br>'+WellType+' </td><td></td></tr> '+
 					  	 '<tr><td><b>Env: </b><br>'+WellEnv+' </td><td><b>Total Report: </b><br> '+TotalReport+' </td></tr> '+
