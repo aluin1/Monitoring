@@ -85,8 +85,8 @@ if (objReturn==""){
 				 '<tbody> '+
 				 '<tr>'+
 				  '<tr><td width="50%"><b>AFE Number: <br></b> '+objReturn[i].AFENumber+'  </td> <td><b>Currency: <br></b> '+objReturn[i].Currency+'  </td></tr> '+
-				  '<tr><td width="50%"><b>AFE Cost: <br></b> '+objReturn[i].AFECost+'  </td> <td><b>Daily Cost: <br></b> '+objReturn[i].DailyCost+'  </td></tr> '+
-				  '<tr><td width="50%"><b>Cummulative Cost: <br></b> '+objReturn[i].CummulativeCost+'   </td> <td ><b>Cummulative Mud Cost: <br></b> '+objReturn[i].CummulativeMudCost+'    </td> </tr> '+
+				  '<tr><td width="50%"><b>AFE Cost: <br></b>'+objReturn[i].Currency+' '+objReturn[i].AFECost+'  </td> <td><b>Daily Cost: <br></b>'+objReturn[i].Currency+' '+objReturn[i].DailyCost+'  </td></tr> '+
+				  '<tr><td width="50%"><b>Cummulative Cost: <br></b>'+objReturn[i].Currency+' '+objReturn[i].CummulativeCost+'   </td> <td ><b>Cummulative Mud Cost: <br></b> '+objReturn[i].Currency+' '+objReturn[i].CummulativeMudCost+'    </td> </tr> '+
 				 // '<tr><td width="50%"><b>Cummulative Cost: <br></b> '+objReturn[i].CummulativeCost+'   </td> <td><b>Daily Mud Cost: <br></b> '+objReturn[i].DailyMudCost+'   </td></tr> '+
 				  
 				 // '<tr><td width="50%"><b>Cummulative Mud Cost: <br></b> '+objReturn[i].CummulativeMudCost+'    </td> <td><b>Day Supervisor: <br></b> '+objReturn[i].DaySupervisor+'   </td></tr> '+  
@@ -1250,7 +1250,7 @@ else{
 	     dtWellReportLithology='<table style="font-size:12px" >	'+
 				 '<tbody> '+
 				 '<tr>'+
-				  '<tr><td width="50%"><b>Interval: <br></b> '+objReturnLithology[i].Interval+' '+objReturnLithology[i].UOMInterval+'  </td> <td><b>ROPrvg: <br></b> '+objReturnLithology[i].ROPrvg+'  '+objReturnLithology[i].UOMROPrvg+'  </td></tr> '+  
+				  '<tr><td width="50%"><b>Interval: <br></b> '+objReturnLithology[i].Interval+' '+objReturnLithology[i].UOMInterval+'  </td> <td><b>ROPavg: <br></b> '+objReturnLithology[i].ROPrvg+'  '+objReturnLithology[i].UOMROPrvg+'  </td></tr> '+  
 				    '<tr><td width="50%"><b>Percentlith: <br></b> '+objReturnLithology[i].Percentlith+'  </td> <td><b>Formation: <br></b> '+objReturnLithology[i].Formation+'      </td></tr> '+   
 				    '<tr><td width="50%"><b>Dolomite: <br></b> '+objReturnLithology[i].Dolomite+'  </td> <td> <b>Calcite: <br></b> '+objReturnLithology[i].Calcite+' </td></tr> '+   
 				    '<tr><td colspan="2"><b>Description: <br></b> '+objReturnLithology[i].Description+'  </td> </tr> '+  

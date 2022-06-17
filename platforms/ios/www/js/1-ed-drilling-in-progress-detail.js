@@ -39,6 +39,7 @@ var AFENumber =localStorage.getItem("AFENumber");
  var WellImageUrl = localStorage.getItem("WellImageUrl"); 
 var OperatorName = localStorage.getItem("OperatorName");
 var FieldName = localStorage.getItem("FieldName");
+var Currency = localStorage.getItem("Currency");
 
 
 let formattedLastDDR = "";
@@ -57,8 +58,8 @@ let currentLastDDR=  new Date(LastDDR);
 	var dtWell2 = '<div class="card" style="padding: 10px;margin: 10px 10px 0px 10px;" >'+
 				 '<table style="font-size:12px">'+
 				  '<tr><td width="50%"><b>Rig Contractor: </b><br>'+ContractorName+' </td><td><b>AFE No:</b> <br> '+AFENumber+' </td></tr> '+
-				  '<tr><td> </td><td><b>AFE Budget:</b><br>  '+AFECost+'  </td></tr> '+
-				  '<tr><td> </td><td><b>Cum. Cost: </b><br> '+CummulativeCost+'  </td></tr> '+
+				  '<tr><td> </td><td><b>AFE Budget:</b><br>  '+Currency+' '+AFECost+'  </td></tr> '+
+				  '<tr><td> </td><td><b>Cum. Cost: </b><br> '+Currency+' '+CummulativeCost+'  </td></tr> '+
 				 	 	 '<tr><td><b>Well Type: </b><br>'+WellType+' </td><td></td></tr> '+
 					  	 '<tr><td><b>Env: </b><br>'+WellEnv+' </td><td><b>Total Report: </b><br> '+TotalReport+' </td></tr> '+
 					 	 '<tr><td><b>Water Depth: </b><br>'+WaterDepth+' </td><td><b>Last DDR: </b><br >'+formattedLastDDR+' </td></tr> '+ 

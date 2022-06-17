@@ -88,6 +88,7 @@ $$.ajax({
 				'LastDDR="'+objReturn[i].LastReportDate+'"  '+
 				'OperatorName="'+objReturn[i].OperatorName+'"  '+
 				'WellImageUrl="'+objReturn[i].WellImageUrl+'"  '+ 
+				'Currency="'+objReturn[i].Currency+'"  '+ 
 				'FieldName="'+objReturn[i].FieldName+'"> '+
 				'<td style="padding: 10px;"> '+
 				'<b>'+objReturn[i].WellName+' </b></td>'+
@@ -141,6 +142,7 @@ $$('.btn-detail').on('click', function () {
 	   var WellImageUrl  = $$(this).attr("WellImageUrl");
 	   var OperatorName  = $$(this).attr("OperatorName");
 	   var FieldName  = $$(this).attr("FieldName");
+	   var Currency  = $$(this).attr("Currency");
  
  //mainView.router.loadPage('1-ed-drilling-in-progress-detail.html?WellId='+WellId+'&&WellName='+WellName+'&&ContractorName='+ContractorName+'&&AFENumber='+AFENumber);
 
@@ -163,6 +165,7 @@ $$('.btn-detail').on('click', function () {
 	localStorage.setItem('WellImageUrl', WellImageUrl);
 	localStorage.setItem('OperatorName', OperatorName);
 	localStorage.setItem('FieldName', FieldName);
+	localStorage.setItem('Currency', Currency);
 	
 	mainView.router.loadPage('1-ed-drilling-in-progress-detail.html');
 });
