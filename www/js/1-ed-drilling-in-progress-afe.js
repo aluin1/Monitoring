@@ -743,8 +743,10 @@ let currentNPTEndTime=  new Date(objReturnNPT[i].NPTEndTime);
 	  
 	     dtWellReportNPT='<tr>'+
 				'<td style="padding:5px;text-align:right;"> '+objReturnNPT[i].OrderNo+'     </td>'+
-				'<td style="padding:5px;">'+formattedNPTStartTime+'    </td> '+ 
-				'<td style="padding:5px;"  > '+formattedNPTEndTime+'     </td> '+
+				//'<td style="padding:5px;">'+formattedNPTStartTime+'    </td> '+ 
+				//'<td style="padding:5px;"  > '+formattedNPTEndTime+'     </td> '+
+				'<td style="padding:5px;">'+objReturnNPT[i].NPTStartTime+'   </td> '+ 
+				'<td style="padding:5px;"  > '+objReturnNPT[i].NPTEndTime+'     </td> '+
 				'<td style="padding:5px;text-align:right;"> '+objReturnNPT[i].NPTHours+'  '+objReturnNPT[i].UOMNPTHours+'   </td>  '+ 
 				'<td style="padding:5px;text-align:right;"  > '+objReturnNPT[i].NPTCode+'</td>'+
 				'<td style="padding:5px;"  > '+objReturnNPT[i].NPTResponsibility+'</td>'+
