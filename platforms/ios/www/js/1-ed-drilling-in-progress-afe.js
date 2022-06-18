@@ -84,9 +84,9 @@ if (objReturn==""){
 	     dtWellReport='<table style="font-size:12px" >	'+
 				 '<tbody> '+
 				 '<tr>'+
-				  '<tr><td width="50%"><b>AFE Number: <br></b> '+objReturn[i].AFENumber+'  </td> <td><b>Currency: <br></b> '+objReturn[i].Currency+'  </td></tr> '+
-				  '<tr><td width="50%"><b>AFE Cost: <br></b>'+objReturn[i].Currency+' '+objReturn[i].AFECost+'  </td> <td><b>Daily Cost: <br></b>'+objReturn[i].Currency+' '+objReturn[i].DailyCost+'  </td></tr> '+
-				  '<tr><td width="50%"><b>Cummulative Cost: <br></b>'+objReturn[i].Currency+' '+objReturn[i].CummulativeCost+'   </td> <td ><b>Cummulative Mud Cost: <br></b> '+objReturn[i].Currency+' '+objReturn[i].CummulativeMudCost+'    </td> </tr> '+
+				  '<tr><td width="50%"><b>AFE Number: <br></b> '+objReturn[i].AFENumber+'  </td> <td><b>AFE Cost: <br></b>'+objReturn[i].Currency+' '+objReturn[i].AFECost+' </td></tr> '+
+				  '<tr><td width="50%"> <b>Daily Cost: <br></b>'+objReturn[i].Currency+' '+objReturn[i].DailyCost+'</td> <td> <b>Cummulative Cost: <br></b>'+objReturn[i].Currency+' '+objReturn[i].CummulativeCost+' </td></tr> '+
+				 // '<tr><td width="50%">   </td> <td ><b>Cummulative Mud Cost: <br></b> '+objReturn[i].Currency+' '+objReturn[i].CummulativeMudCost+'    </td> </tr> '+
 				 // '<tr><td width="50%"><b>Cummulative Cost: <br></b> '+objReturn[i].CummulativeCost+'   </td> <td><b>Daily Mud Cost: <br></b> '+objReturn[i].DailyMudCost+'   </td></tr> '+
 				  
 				 // '<tr><td width="50%"><b>Cummulative Mud Cost: <br></b> '+objReturn[i].CummulativeMudCost+'    </td> <td><b>Day Supervisor: <br></b> '+objReturn[i].DaySupervisor+'   </td></tr> '+  

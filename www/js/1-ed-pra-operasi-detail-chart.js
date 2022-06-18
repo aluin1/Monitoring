@@ -122,7 +122,7 @@ var chart2;
         }
     }, 
     tooltip: {
-        headerFormat: '<b>{series.name}</b><br/>',
+        headerFormat: '<b>{point.x}</b><br/>',
        // pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
         pointFormat: '{point.y} %'
     },
@@ -131,7 +131,7 @@ var chart2;
             stacking: 'normal',
             dataLabels: {
                 enabled: true,
-                format: '{point.y:.1f}%'
+                format: '{point.y} %'
             }, 
         }
     },		
