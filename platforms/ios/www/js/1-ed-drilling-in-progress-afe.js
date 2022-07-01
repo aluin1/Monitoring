@@ -703,16 +703,13 @@ $$.ajax({
 
 	   var dtWellReportNPT='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
 			 	'<div class="card-title" >  NPT</div>	'+
-				'<table class="table-responsive" style="font-size:12px" border="1" >	'+
+				'<table   width="100%" style="font-size:12px" border="1" >	'+
 				 '<tbody> '+
 				 '<tr>'+
 				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Order No </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>NPT Start Time </b> </td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>NPT End Time </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>NPT Hours </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>NPT Code </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>NPT Responsibility </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>NPT Description </b></td>'+
+				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>NPT Time </b> </td>'+
+				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Total Hours </b></td>'+
+				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Detail </b></td>'+ 
 				 '</tr>';
 				  
 			 dtWellAllNPT.push(dtWellReportNPT); 
@@ -745,12 +742,11 @@ let currentNPTEndTime=  new Date(objReturnNPT[i].NPTEndTime);
 				'<td style="padding:5px;text-align:right;"> '+objReturnNPT[i].OrderNo+'     </td>'+
 				//'<td style="padding:5px;">'+formattedNPTStartTime+'    </td> '+ 
 				//'<td style="padding:5px;"  > '+formattedNPTEndTime+'     </td> '+
-				'<td style="padding:5px;">'+objReturnNPT[i].NPTStartTime+'   </td> '+ 
-				'<td style="padding:5px;"  > '+objReturnNPT[i].NPTEndTime+'     </td> '+
-				'<td style="padding:5px;text-align:right;"> '+objReturnNPT[i].NPTHours+'      </td>  '+ 
-				'<td style="padding:5px;text-align:right;"  > '+objReturnNPT[i].NPTCode+'</td>'+
-				'<td style="padding:5px;"  > '+objReturnNPT[i].NPTResponsibility+'</td>'+
-				'<td style="padding:5px;"  > '+objReturnNPT[i].NPTDescription+'</td>'+
+				'<td style="padding:5px;">'+objReturnNPT[i].NPTStartTime+'   to '+objReturnNPT[i].NPTEndTime+'     </td> '+
+				'<td style="padding:5px;text-align:right;"> '+objReturnNPT[i].NPTHours+'       </td>  '+ 
+				 
+				'<td style="padding:5px;"  ><b>Code:</b> '+objReturnNPT[i].NPTCode+'<br> <b> Responsibility: </b>'+objReturnNPT[i].NPTResponsibility+'<br> <b>Description </b><br>  Responsibility: '+objReturnNPT[i].NPTDescription+'</td>'+
+				 
 				'</tr> ';
 				  
 				
@@ -1076,7 +1072,7 @@ document.getElementById("data-well-weather").innerHTML =dtWellAllWeather.join(" 
 
  
    
-  
+  /*
  $$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Period-Report-DGR-Formation'),
@@ -1156,10 +1152,70 @@ document.getElementById("data-well-Formation").innerHTML =dtWellAllFormation.joi
     }
   });
  
+*/
 
 
+$$.ajax({ 
+ type: "POST",
+        url:  myApp.getWebApi('APPS-GET-Well-Period-Report-DGR-Formation'),
+        data: {"txtReportId":""+ReportId+""} ,
+    
+    timeout: (5 * 60 * 1000),
+    success: function (data, status, xhr) {
 
+      console.log(data);
+      var objReturnFormation = JSON.parse(data);
 
+ 
+	
+
+	   var dtWellReportFormation='<div class="card  " style="padding: 10px;margin: 10px 10px 0px 10px;">'+
+			 	'<div class="card-title" >  Formation</div>	';
+			 dtWellAllFormation.push(dtWellReportFormation); 
+if (objReturnFormation==""){
+	  dtWellReportFormation='<center  style=" color: red;" ><b>No Formation </b></center>';
+				
+			 dtWellAllFormation.push(dtWellReportFormation); 
+			 
+      myApp.hidePreloader();
+	
+	
+}
+else{
+		  for (i = 0; i < objReturnFormation.length; i++) { 
+	  
+	     dtWellReportFormation='<table style="font-size:12px" >	'+
+				 '<tbody> '+
+				 '<tr>'+
+				  '<tr><td width="50%" colspan="3"><b>Formation Name: <br></b> '+objReturnFormation[i].FormationName+'  </td> </tr> '+  
+				    '<tr><td><b>Prognoses MD: <br></b> '+objReturnFormation[i].PrognosesMD+'  '+objReturnFormation[i].UOMPrognosesMD+'  </td> <td  ><b>Prognoses TVD: <br></b> '+objReturnFormation[i].PrognosesTVD+' '+objReturnFormation[i].UOMPrognosesTVD+'  </td> <td><b>Prognoses TVDMSS: <br></b> '+objReturnFormation[i].PrognosesTVDMSS+'  '+objReturnFormation[i].UOMPrognosesTVDMSS+'     </td></tr> '+   
+				    '<tr><td  ><b>Actual MD: <br></b> '+objReturnFormation[i].ActualMD+' '+objReturnFormation[i].UOMActualMD+'  </td> <td> <b>Actual TVD: <br></b> '+objReturnFormation[i].ActualTVD+' '+objReturnFormation[i].UOMActualTVD+' </td><td colspan="2"><b>Actual TVDMSS: <br></b> '+objReturnFormation[i].ActualTVDMSS+' '+objReturnFormation[i].UOMActualTVDMSS+'  </td></tr> '+   
+				    
+				     '<tr><td   colspan="3"><hr style="border-top: 2px solid rgb(0 46 102);">  </td>  </tr> '+ 
+				 
+				 '</tbody></table>';
+				
+			 dtWellAllFormation.push(dtWellReportFormation); 
+			 
+      myApp.hidePreloader();
+} } 
+ 
+	     dtWellReportFormation= '</div>';  
+			 dtWellAllFormation.push(dtWellReportFormation); 
+document.getElementById("data-well-Formation").innerHTML =dtWellAllFormation.join(" ");
+ 
+    },
+
+    error: function (xhr, status) {
+      console.log(' failed')
+      myApp.hidePreloader();
+    },
+    complete: function (xhr, status) {
+      myApp.hidePreloader();
+    }
+  });
+
+ 
 $$.ajax({ 
  type: "POST",
         url:  myApp.getWebApi('APPS-GET-Well-Period-Report-DGR-Gas'),

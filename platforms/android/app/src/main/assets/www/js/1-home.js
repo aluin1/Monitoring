@@ -51,6 +51,7 @@ $$('.btn-exploration-drilling').on('click', function () {
 });
 
 $$('.btn-seismic-survey').on('click', function () {
+	/*
  myApp.modal({
 		title:  '<div style="margin-bottom:-15px"><i style="font-size:40px;color:#002e66" class="mdi mdi-information-outline"></i></div><p style="color: #002e66; font-size: 15px;  margin: 20px 0 0 ;">Masih dalam tahap Development</p> ',
 		buttons: [
@@ -60,8 +61,8 @@ $$('.btn-seismic-survey').on('click', function () {
 		  }  
 		]
 	})
- 
-// mainView.router.loadPage('1-seismic-survey-home.html');
+ */
+mainView.router.loadPage('1-seismic-survey-home.html');
 
 });
 
