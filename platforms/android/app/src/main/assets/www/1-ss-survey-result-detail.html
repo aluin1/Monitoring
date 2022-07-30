@@ -70,14 +70,16 @@
     -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
 }
-.card .card-title {
-    color: #002e66;
-    margin-bottom: 0px;
-    text-transform: capitalize;
-    font-family: "ubuntu-medium", sans-serif;
-    font-size: 1.125rem;
+.modal-overlay.modal-overlay-visible, .preloader-indicator-overlay.modal-overlay-visible, .popup-overlay.modal-overlay-visible {
+    visibility: visible;
+    opacity: 1;
+    display: none;
 }
-</style>       
+.navbar a.link i + span, .toolbar a.link i + span, .subnavbar a.link i + span, .navbar a.link i + i, .toolbar a.link i + i, .subnavbar a.link i + i, .navbar a.link span + i, .toolbar a.link span + i, .subnavbar a.link span + i, .navbar a.link span + span, .toolbar a.link span + span, .subnavbar a.link span + span {
+    margin-left: 7px;
+    color: #fff;
+}
+</style>     
     <div class="list-block"   >
   <div class="row">
    
@@ -96,8 +98,8 @@
 				<td> 
 <h4 class="card-title" align="center" style="font-size:20px;margin-bottom: 0rem;text-align: left; ">Seismic Survey</h4 >
 						<h4 class="card-title"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;">Survey Result</span></h4>  
-						    <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" >2D KE-11 </span></h4>
-				</td>
+						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="ProjectNameSS"> </span></h4>
+						  </td>
 				</tr>
 				</table>
 			   
@@ -106,15 +108,8 @@
 </div>
 
    
-
-
- <div class="card  "> 
-                <div class="card-body" >				
-				<center>
-				<img src="images/sr1.png" width="280">
-				</center>
-              </div> 
-</div>
+ <div id="data-survey-result-detail"  >  
+  </div>
  
  
  

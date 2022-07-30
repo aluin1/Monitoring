@@ -100,6 +100,30 @@ console.log(dataUser);
  				
  
 	document.getElementById("data-user").innerHTML = datauserq.join(" ");	
+	
+/*
+  
+  
+  var latitude =-6.25396244;
+  var longitude = 108.27631255; 
+		
+		  
+             var myLatlng = new google.maps.LatLng(latitude,longitude);
+             var mapOptions = {
+               zoom: 10,
+               center: myLatlng 
+            }
+            var map = new google.maps.Map(document.getElementById('map-canvas2'), mapOptions);
+			
+             var marker = new google.maps.Marker({
+                 position: myLatlng,
+                map: map,
+                icon: 'icon/marker.png', 
+          animation: google.maps.Animation.DROP				
+             });
+		 
+		  */
 	 
+	 	
  
 }); 

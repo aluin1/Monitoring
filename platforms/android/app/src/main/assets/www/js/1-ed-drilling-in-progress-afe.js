@@ -605,7 +605,7 @@ $$.ajax({
 			 	'<div class="card-title" >  Mud Additive</div>	'+
 				'<table    style="font-size:12px" border="1" >	'+
 				 '<tbody> '+
-				 '<tr><td style="padding:5px;background-color: #002e66;color: #fff;"><b>Order No </b></td><td style="padding:5px;background-color: #002e66;color: #fff;"><b>Mud Additive Type</b></td><td style="padding:5px;background-color: #002e66;color: #fff;"><b>Mud Additive Amount </b></td>';
+				 '<tr><td style="padding:5px;"><b>Order No </b></td><td style="padding:5px;"><b>Mud Additive Type</b></td><td style="padding:5px;"><b>Mud Additive Amount </b></td>';
 				  
 			 dtWellAllMudAdditive.push(dtWellReportMudAdditive); 
 		  for (i = 0; i < objReturnMudAdditive.length; i++) { 
@@ -705,11 +705,11 @@ $$.ajax({
 			 	'<div class="card-title" >  NPT</div>	'+
 				'<table   width="100%" style="font-size:12px" border="1" >	'+
 				 '<tbody> '+
-				 '<tr>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Order No </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>NPT Time </b> </td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Total Hours </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Detail </b></td>'+ 
+				'<tr style="background:linear-gradient(to right,#63cad4, #047edf);color:#fff;">'+
+				 '<td style="padding:5px;"><b>Order No </b></td>'+
+				 '<td style="padding:5px;"><b>NPT Time </b> </td>'+
+				 '<td style="padding:5px;"><b>Total Hours </b></td>'+
+				 '<td style="padding:5px;"><b>Detail </b></td>'+ 
 				 '</tr>';
 				  
 			 dtWellAllNPT.push(dtWellReportNPT); 
@@ -850,7 +850,7 @@ $$.ajax({
 			 	'<div class="card-title" >  Personnel</div>	'+
 				'<table     style="font-size:12px" border="1" >	'+
 				 '<tbody> '+
-				 '<tr><td   style="padding: 5px;background-color: #002e66;color: #fff;"><b>Company  </b></td><td style="padding: 5px;background-color: #002e66;color: #fff;"><b>People </b></td></tr>';
+				 '<tr><td   style="padding: 5px;"><b>Company  </b></td><td style="padding: 5px;"><b>People </b></td></tr>';
 				  
 			 dtWellAllPersonnel.push(dtWellReportPersonnel); 
 			 
@@ -902,14 +902,14 @@ $$.ajax({
 				'<table class="table-responsive" style="font-size:12px" border="1" >	'+
 				 '<tbody> '+
 				 '<tr>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Pump Name </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Time </b> </td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Slow Speed </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Circulate </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Strokes </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Pressure </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Liner Size </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Efficiency </b></td>'+
+				 '<td style="padding:5px;"><b>Pump Name </b></td>'+
+				 '<td style="padding:5px;"><b>Time </b> </td>'+
+				 '<td style="padding:5px;"><b>Slow Speed </b></td>'+
+				 '<td style="padding:5px;"><b>Circulate </b></td>'+
+				 '<td style="padding:5px;"><b>Strokes </b></td>'+
+				 '<td style="padding:5px;"><b>Pressure </b></td>'+
+				 '<td style="padding:5px;"><b>Liner Size </b></td>'+
+				 '<td style="padding:5px;"><b>Efficiency </b></td>'+
 				 '</tr>';
 				  
 			 dtWellAllPumps.push(dtWellReportPumps); 
@@ -1092,13 +1092,13 @@ document.getElementById("data-well-weather").innerHTML =dtWellAllWeather.join(" 
 				'<table class="table-responsive" style="font-size:12px" border="1" >	'+
 				 '<tbody> '+
 				 '<tr>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Formation Name </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Prognoses MD </b> </td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Prognoses TVD </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Prognoses TVD MSS</b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Actual MD </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Actual TVD </b></td>'+
-				 '<td style="padding:5px;background-color: #002e66;color: #fff;"><b>Actual TVD MSS </b></td>'+
+				 '<td style="padding:5px;"><b>Formation Name </b></td>'+
+				 '<td style="padding:5px;"><b>Prognoses MD </b> </td>'+
+				 '<td style="padding:5px;"><b>Prognoses TVD </b></td>'+
+				 '<td style="padding:5px;"><b>Prognoses TVD MSS</b></td>'+
+				 '<td style="padding:5px;"><b>Actual MD </b></td>'+
+				 '<td style="padding:5px;"><b>Actual TVD </b></td>'+
+				 '<td style="padding:5px;"><b>Actual TVD MSS </b></td>'+
 				 '</tr>';
 				  
 			 dtWellAllFormation.push(dtWellReportFormation); 

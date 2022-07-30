@@ -16,7 +16,7 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: false
 }); 
  
- var strUsername = localStorage.getItem("LogonUsername");
+  var strUsername = localStorage.getItem("LogonUsername");
 var globalApiDefaultWeb = 'http://monitor.gura.me';
 var globalApiSubUrl = '/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=';
 var globalApiKey = 'Aw3QgAsTr1dfvOS4ngVpjNGur1t4hGU6';

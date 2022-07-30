@@ -42,7 +42,7 @@ document.getElementById("strFieldNameChart").innerHTML = FieldName;
 			    
 				'<table class="table">'+
 				'<tr style="background:linear-gradient(to right,#63cad4, #047edf);color:#fff;">'+
-				'<td>Activity detail</td>'+
+				'<td>Activity Detail</td>'+
 				'	<td>Progress</td>'+
 				'<td>Remarks</td>'+
 			 

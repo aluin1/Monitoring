@@ -20,7 +20,7 @@
   </div>
   </div>
   <div class="page-content bg"  > 
-
+ 
   <style> 
   .swiper-pagination {
     bottom: 10px; 
@@ -70,6 +70,200 @@
     -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
 }
+
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 320px;
+    max-width: 660px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+
+
+
+.svg-item {
+    width: 100%;
+    font-size: 16px;
+    margin: 0 auto;
+    animation: donutfade 1s;
+}
+
+@keyframes donutfade {
+  /* this applies to the whole svg item wrapper */
+    0% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .svg-item {
+        width: 80%;
+    }
+}
+
+.donut-ring {
+    stroke: #EBEBEB;
+}
+
+.donut-segment {
+    transform-origin: center;
+    stroke: #FF6200;
+}
+
+.donut-segment-min-seismic {
+    stroke: #ffcc00;
+    animation: donut1 3s;
+}
+
+.donut-segment-mid-seismic  {
+    stroke: #198ae3;
+    animation: donut2 3s;
+}
+
+.donut-segment-max-seismic  {
+    stroke: #12d132;
+    animation: donut3 3s;
+}
+
+.segment-1{fill:#ccc;}
+.segment-2{fill:aqua;}
+.segment-3{fill:#d9e021;}
+.segment-4{fill:#ed1e79;}
+
+.donut-percent {
+    animation: donutfadelong 1s;
+}
+
+@keyframes donutfadelong {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes donut1 {
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 69, 31;
+    }
+}
+
+@keyframes donut2 {
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 30, 70;
+    }
+}
+
+@keyframes donut3{
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 1, 99;
+    }
+}
+
+.donut-text {
+    font-family: Arial, Helvetica, sans-serif;
+    fill: #FF6200;
+}
+.donut-text-1 {
+    fill: aqua;
+}
+.donut-text-min-seismic {
+    fill: #ffcc00;
+}
+.donut-text-mid-seismic {
+    fill: #198ae3;
+}
+
+.donut-text-max-seismic {
+    fill: #12d132;
+}
+ 
+.donut-label {
+    font-size: 0.28em;
+    font-weight: 700;
+    line-height: 1;
+    fill: #000;
+    transform: translateY(0.25em);
+}
+
+.donut-percent {
+    font-size: 0.5em;
+    line-height: 1;
+    transform: translateY(0.5em);
+    font-weight: bold;
+}
+
+.donut-data {
+    font-size: 0.12em;
+    line-height: 1;
+    transform: translateY(0.5em);
+    text-align: center;
+    text-anchor: middle;
+    color:#666;
+    fill: #666;
+    animation: donutfadelong 1s;
+}
+
+
+
+
+/* ---------- */
+/* just for this presentation */
+html { text-align:center; }
+.svg-item {
+  max-width:30%;
+  display:inline-block;
+}
 .card .card-title {
     color: #002e66;
     margin-bottom: 0px;
@@ -77,7 +271,22 @@
     font-family: "ubuntu-medium", sans-serif;
     font-size: 1.125rem;
 }
-</style>       
+
+
+ .popup-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(253, 253, 253, 0);
+    z-index: 0!important;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+}
+</style>      
     <div class="list-block"   >
   <div class="row">
    
@@ -96,7 +305,7 @@
 				<td>
 				<h4 class="card-title" align="center" style="font-size:20px;margin-bottom: 0rem;text-align: left; ">Seismic Survey</h4 >
 						<h4 class="card-title"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;">Pre-Operation</span></h4>  
-						    <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" >2D KE-11 </span></h4>
+						  <h4 class="card-title" style="margin-bottom: 0rem;"><span style="color:#ff9500;margin-bottom: 0rem;font-size:14px;" id="strNameProj"> </span></h4>
 				</td>
 				</tr>
 				</table>
@@ -105,45 +314,23 @@
               </div>
 </div>
 
+   
+ <!--
+<div class="  accordion-list custom-accordion">
+
+   <div id="data-seismic-pra-detail"  > </div>  
+</div> 
   
-<!--
- <div class="card  ">
-                <div class="card-body" >
-				<table class="table">	
-				<tbody>
-				<tr><td style="background-color: #ffcc00;"  ><b>GENERAL</b> </td><td></td></tr> 
-				<tr><td> Project Type: </td><td>2D Seismic Acquisition, Processing OBN - Reprocessing Existing 2D</td></tr> 
-				<tr><td> Location: </td><td>South Area PHE WMO</td></tr> 
-				<tr><td> FF Coverage / SP / PM:  </td><td>461 km 2D</td></tr> 
-				<tr><td> Objective:   </td><td>Plio-Pleistocene deep marine deposit (300-12000 ft)</td></tr> 
-				<tr><td> Rec. Resources Target:   </td><td>1,953.57 BCF (gas)</td></tr> 
-				<tr><td> Schedule Plan:   </td><td></td></tr> 
-				<tr><td> Budget FS:   </td><td></td></tr> 
-				<tr><td> Budget AFE:   </td><td></td></tr> 
-				<tr><td> Budget RKAP:   </td><td></td></tr> 
-				 </tbody></table>
-              </div>
-</div>!-->
+<div class="  accordion-list custom-accordion">
 
+   <div id="data-seismic-pra-detail2"  > </div>  
+</div> 
 
- <div class="card  "> 
-                <div class="card-body" >				
-				<center>
-				<img src="images/ss1.png" width="280">
-				</center>
-              </div> 
-</div>
+  !-->
+<div class="  accordion-list custom-accordion">
 
- <div class="card  "> 
-                <div class="card-body" >				
-				<center>
-				<img src="images/ss2.png" width="280">
-				</center>
-              </div> 
-</div>
-
-  
-
+   <div id="data-seismic-schedule"  > </div>  
+</div> 
   
 
 </div>
