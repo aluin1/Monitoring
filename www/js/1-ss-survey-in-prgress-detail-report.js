@@ -187,10 +187,10 @@ $$('.btn-detail-activity').on('click', function () {
 					
                       '<p style="margin: 15px 0;" align="right"><a href="#" class="close-popup"><label class="badge badge-danger"> Close</label> </a></p>'+
                    '<table width="100%">'+
-				   '<tr><td colspan="2"><b>Activity:</b><br> <p style="font-size:12px">'+Activity+'</p></td></tr>'+
-                    '<tr><td colspan="2"><b>Problem: </b><br><p style="font-size:12px">'+Problem+'</p></td></tr>'+
-                   '<tr><td colspan="2"><b>Strategies:</b><br> <p style="font-size:12px">'+Strategies+'</p></td></tr>'+
-                    '<tr><td colspan="2"><b>Completion Status:</b><br> <p style="font-size:12px">'+CompletionStatus+'</p></td></tr>'+ 
+				   '<tr><td colspan="2" style="font-size: 12px;"><b>Activity:</b><br> <p style="font-size:12px">'+Activity+'</p></td></tr>'+
+                    '<tr><td colspan="2" style="font-size: 12px;"><b>Problem: </b><br><p style="font-size:12px">'+Problem+'</p></td></tr>'+
+                   '<tr><td colspan="2" style="font-size: 12px;"><b>Strategies:</b><br> <p style="font-size:12px">'+Strategies+'</p></td></tr>'+
+                    '<tr><td colspan="2" style="font-size: 12px;"><b>Completion Status:</b><br> <p style="font-size:12px">'+CompletionStatus+'</p></td></tr>'+ 
                   '</table></div>'+
                   '</div>'
   myApp.popup(popupHTML);
@@ -1323,16 +1323,11 @@ $$('.btn-detail-program').on('click', function () {
 					
                       '<p style="margin: 15px 0;" align="right"><a href="#" class="close-popup"><label class="badge badge-danger"> Close</label> </a></p>'+
                    '<table width="100%">'+
-				   '<tr><td colspan="2"><b>Item Kegiatan:</b><br> <p style="font-size:12px">'+ItemKegiatan+'</p></td></tr>'+
-                    '<tr><td colspan="2"><b>Rencana Total Point: </b><br><p style="font-size:12px">'+RencanaTotalPoint+'</p></td></tr>'+
-                   '<tr><td colspan="2"><b>Rencana Total Lingkup:</b><br> <p style="font-size:12px">'+RencanaTotalLingkup+'</p></td></tr>'+
-                    '<tr><td colspan="2"><b>Progres Harian Total Point:</b><br> <p style="font-size:12px">'+ProgresHarianTotalPoint+'</p></td></tr>'+ 
-                    '<tr><td colspan="2"><b>Progres Harian Total Lingkup:</b><br> <p style="font-size:12px">'+ProgresHarianTotalLingkup+'</p></td></tr>'+ 
-                    '<tr><td colspan="2"><b>Kumulatif Unit Point:</b><br> <p style="font-size:12px">'+KumulatifUnitPoint+'</p></td></tr>'+ 
-                    '<tr><td colspan="2"><b>Kumulatif Unit Lingkup:</b><br> <p style="font-size:12px">'+KumulatifUnitLingkup+'</p></td></tr>'+ 
-                    '<tr><td colspan="2"><b>Percentage:</b><br> <p style="font-size:12px">'+Percentage+'</p></td></tr>'+ 
-                    '<tr><td colspan="2"><b>Personil:</b><br> <p style="font-size:12px">'+Personil+'</p></td></tr>'+ 
-                    '<tr><td colspan="2"><b>Kru:</b><br> <p style="font-size:12px">'+Kru+'</p></td></tr>'+ 
+				   '<tr><td style="font-size: 12px;"><b>Item Kegiatan:</b><br> <p style="font-size:12px">'+ItemKegiatan+'</p></td><td  style="font-size: 12px;"><b>Rencana Total Point: </b><br><p style="font-size:12px">'+RencanaTotalPoint+'</p></td></tr>'+
+                   '<tr><td style="font-size: 12px;"><b>Rencana Total Lingkup:</b><br> <p style="font-size:12px">'+RencanaTotalLingkup+'</p></td><td style="font-size: 12px;" ><b>Progres Harian Total Point:</b><br> <p style="font-size:12px">'+ProgresHarianTotalPoint+'</p></td></tr>'+ 
+                    '<tr><td  style="font-size: 12px;"><b>Progres Harian Total Lingkup:</b><br> <p style="font-size:12px">'+ProgresHarianTotalLingkup+'</p></td><td style="font-size: 12px;" ><b>Kumulatif Unit Point:</b><br> <p style="font-size:12px">'+KumulatifUnitPoint+'</p></td></tr>'+ 
+                    '<tr><td  style="font-size: 12px;"><b>Kumulatif Unit Lingkup:</b><br> <p style="font-size:12px">'+KumulatifUnitLingkup+'</p></td><td style="font-size: 12px;" ><b>Percentage:</b><br> <p style="font-size:12px">'+Percentage+'</p></td></tr>'+ 
+                    '<tr><td  style="font-size: 12px;"><b>Personil:</b><br> <p style="font-size:12px">'+Personil+'</p></td><td style="font-size: 12px;" ><b>Kru:</b><br> <p style="font-size:12px">'+Kru+'</p></td></tr>'+ 
                   '</table></div>'+
                   '</div>'
   myApp.popup(popupHTML);
