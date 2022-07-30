@@ -2,34 +2,42 @@
 
 
 myApp.onPageInit('1-index-login', function(page) { 
+  
+     document.addEventListener("deviceready", onDeviceReady, false);
+   
 
- myApp.showPreloader("<div style='margin-bottom:-15px'><img src='icon/ic_launcher.png' width='50'></div><p style='color: #047edf; font-size: 12px;  margin: 30px 0 0 ; '>Loading Aplikasi</p>");
-    setTimeout(function () {
-	console.log(window.location.href);  
-	
-	const getLastItem = thePath => thePath.substring(thePath.lastIndexOf('/') + 1);
-	console.log(getLastItem(window.location.href)); 	
-	localStorage.setItem('FirstUrl', getLastItem(window.location.href));
-	myApp.hidePreloader();
-		 });
- 
-
-var firstPageUrl=localStorage.getItem("FirstUrl"); 
-console.log(firstPageUrl);
- document.addEventListener('backbutton', function (evt) {
-     if (cordova.platformId !== 'windows') {
-         return;
-   }
-
-    if (firstPageUrl !== "1-home.html" || firstPageUrl !== "1-index-login.html") {
-        window.history.back();
-		console.log("close app");
-    } else {
-        throw new Error('Exit'); // This will suspend the app
+    // Cordova is loaded and it is now safe to call Cordova methods
+    //
+    function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("backbutton", onBackKeyDown, false);
     }
-}, false);
+function onBackKeyDown() {
+	if (mainView.activePage.name == "1-home" || mainView.activePage.name == "1-index-login" ) {
 
- 
+  myApp.modal({
+		title:  '<div style="margin-bottom:-15px"><i style="font-size:40px;color:#002e66" class="mdi mdi-logout"></i></div><p style="color: #002e66; font-size: 15px;  margin: 20px 0 0 ;">Anda Yakin Akan Keluar Aplikasi?</p> ',
+		buttons: [
+		  {
+			text: '<div style="color:#002e66;font-size:15px;">Batal</div>',
+			bold: true
+		  } , {
+			text: '<div style="color:#002e66;font-size:15px;">Ya</div>',
+			bold: true,
+			 onClick: function () {
+				  navigator.app.exitApp();
+			
+				}
+		  }  
+		]
+	})
+  
+            } else {
+
+                mainView.router.back();
+           }
+}
+
 	$$('.btndata').on('click', function () {
  
  mainView.router.loadPage('1-homepage.html');
