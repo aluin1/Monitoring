@@ -15,7 +15,7 @@ $$('.btn-ed-drilling-in-progress-detail').on('click', function () {
  var dtWellAll = [];
  var dtWellPeriodName = [];
   
- myApp.showPreloader("<div style='margin-bottom:-15px'><img src='icon/ic_launcher.png' width='50'></div><p style='color: #002e66; font-size: 14px;  margin: 20px 0 0 ; '>Loading Aplikasi</p>");	
+ myApp.showPreloader("<div style='margin-bottom:-15px' ><img src='icon/ic_launcher.png' width='50'></div><p style='color: #002e66; font-size: 14px;  margin: 20px 0 0 ; '>Loading Aplikasi</p>");	
 		 
 $$.ajax({
     url: myApp.getWebApi('APPS-GET-Active-Well-OnDrill'),

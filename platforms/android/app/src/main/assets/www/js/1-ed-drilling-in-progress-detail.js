@@ -52,7 +52,7 @@ const months = ["Januari", "Februari", "Maret","April", "Mei", "Juni", "juli", "
  var dtWellAll2 = [];
  console.log(WellImageUrl);
   
- myApp.showPreloader("<div style='margin-bottom:-15px'><img src='icon/ic_launcher.png' width='50'></div><p style='color: #002e66; font-size: 14px;  margin: 20px 0 0 ; '>Loading Aplikasi</p>");	
+ myApp.showPreloader("<div style='margin-bottom:-15px'  ><img src='icon/ic_launcher.png' width='50'></div><p style='color: #002e66; font-size: 14px;  margin: 20px 0 0 ; '>Loading Aplikasi</p>");	
 	if(LastDDR!=""){
 let currentLastDDR=  new Date(LastDDR);
   formattedLastDDR = currentLastDDR.getDate() + " " + months[currentLastDDR.getMonth()] + " " + currentLastDDR.getFullYear();	 

@@ -3,40 +3,7 @@
 
 myApp.onPageInit('1-index-login', function(page) { 
   
-     document.addEventListener("deviceready", onDeviceReady, false);
-   
-
-    // Cordova is loaded and it is now safe to call Cordova methods
-    //
-    function onDeviceReady() {
-        // Register the event listener
-        document.addEventListener("backbutton", onBackKeyDown, false);
-    }
-function onBackKeyDown() {
-	if (mainView.activePage.name == "1-home" || mainView.activePage.name == "1-index-login" ) {
-
-  myApp.modal({
-		title:  '<div style="margin-bottom:-15px"><i style="font-size:40px;color:#002e66" class="mdi mdi-logout"></i></div><p style="color: #002e66; font-size: 15px;  margin: 20px 0 0 ;">Anda Yakin Akan Keluar Aplikasi?</p> ',
-		buttons: [
-		  {
-			text: '<div style="color:#002e66;font-size:15px;">Batal</div>',
-			bold: true
-		  } , {
-			text: '<div style="color:#002e66;font-size:15px;">Ya</div>',
-			bold: true,
-			 onClick: function () {
-				  navigator.app.exitApp();
-			
-				}
-		  }  
-		]
-	})
-  
-            } else {
-
-                mainView.router.back();
-           }
-}
+     
 
 	$$('.btndata').on('click', function () {
  
