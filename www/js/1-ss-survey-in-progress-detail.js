@@ -61,9 +61,10 @@ document.getElementById("strNameProjProg").innerHTML = ProjectName;
 			'<tr><td><b>Project Name:</b> <br>'+ProjectName+'</td><td><b>Operator Name:</b> <br>'+OperatorName+'</td></tr>'+  
 			'<tr><td><b>Working Area:</b> <br>'+WorkingArea+'</td><td><b>WorkArea Status:</b> <br>'+WorkAreaStatus+'</td></tr>'+  
 			'<tr><td><b>Activity Status:</b> <br>'+ActivityStatus+'</td><td><b>Activity Type:</b> <br>'+ActivityType+'</td></tr>'+  
-			'<tr><td><b>Activity Area:</b> <br>'+ActivityArea+'</td><td><b>Executor Of Work:</b> <br>'+ExecutorOfWork+'</td></tr>'+  
-			'<tr><td><b>Operators Arround The Survey Area:</b> <br>'+OperatorsArroundTheSurveyArea+'</td><td><b>Survey Area District:</b> <br>'+SurveyAreaDistrict+'</td></tr>'+  
-			'<tr><td><b>Survey Area City:</b> <br>'+SurveyAreaCity+'</td><td><b>Representative SKKMIGAS:</b> <br>'+RepresentativeSKKMIGAS+'</td></tr>'+  
+			'<tr><td><b>Activity Area:</b> <br>'+ActivityArea+'</td><td> </td></tr>'+  
+			//'<tr><td><b>Activity Area:</b> <br>'+ActivityArea+'</td><td><b>Executor Of Work:</b> <br>'+ExecutorOfWork+'</td></tr>'+  
+			//'<tr><td><b>Operators Arround The Survey Area:</b> <br>'+OperatorsArroundTheSurveyArea+'</td><td><b>Survey Area District:</b> <br>'+SurveyAreaDistrict+'</td></tr>'+  
+			//'<tr><td><b>Survey Area City:</b> <br>'+SurveyAreaCity+'</td><td><b>Representative SKKMIGAS:</b> <br>'+RepresentativeSKKMIGAS+'</td></tr>'+  
 			'	</tbody></table> </div> ';
 			 dtSeismicAllDetail.push(detailSeismic); 
 			 
@@ -110,12 +111,13 @@ document.getElementById("data-seismic-pra-detail").innerHTML = dtSeismicAllDetai
 	   '<table  style="font-size:12px">'+
 			'<tbody>	'+
 			'<tr><td><b>Report No:</b> <br>'+objReturn[i].ReportNumber+'</td><td><b>Report Date:</b> <br>'+formattedReportDate+'</td></tr>'+  
-			'<tr><td><b>Budget Schedule:</b> <br>'+objReturn[i].BudgetSchedule+'</td><td><b>Final AFE Number:</b> <br>'+objReturn[i].FinalAFENumber+'</td></tr>'+  
-			'<tr><td><b>AFE Status:</b> <br>'+objReturn[i].AFEStatus+'</td><td><b>Operation Status:</b> <br>'+objReturn[i].OperationStatus+'</td></tr>'+  
-			'<tr><td><b>Budget Plan:</b> <br>'+objReturn[i].BudgetPlan+'</td><td><b>Budget Plan Revision:</b> <br>'+objReturn[i].BudgetPlanRevision+'</td></tr>'+  
-			'<tr><td><b>Budget Actual:</b> <br>'+objReturn[i].BudgetActual+'</td><td><b>Scope Plan:</b> <br>'+objReturn[i].ScopePlan+'</td></tr>'+  
-			'<tr><td colspan="2"><b>Scope Actual:</b> <br>'+objReturn[i].ScopeActual+'</td> </tr>'+  
-			'<tr><td><b>Summary:</b> <br>'+objReturn[i].Summary+'</td><td><b>Objective:</b> <br>'+objReturn[i].Objective+'</td></tr>'+  
+			'<tr><td><b>Final AFE Number:</b> <br>'+objReturn[i].FinalAFENumber+'</td><td></td></tr>'+  
+			//'<tr><td><b>Budget Schedule:</b> <br>'+objReturn[i].BudgetSchedule+'</td><td><b>Final AFE Number:</b> <br>'+objReturn[i].FinalAFENumber+'</td></tr>'+  
+			//'<tr><td><b>AFE Status:</b> <br>'+objReturn[i].AFEStatus+'</td><td><b>Operation Status:</b> <br>'+objReturn[i].OperationStatus+'</td></tr>'+  
+			//'<tr><td><b>Budget Plan:</b> <br>'+objReturn[i].BudgetPlan+'</td><td><b>Budget Plan Revision:</b> <br>'+objReturn[i].BudgetPlanRevision+'</td></tr>'+  
+			//'<tr><td><b>Budget Actual:</b> <br>'+objReturn[i].BudgetActual+'</td><td><b>Scope Plan:</b> <br>'+objReturn[i].ScopePlan+'</td></tr>'+  
+			//'<tr><td colspan="2"><b>Scope Actual:</b> <br>'+objReturn[i].ScopeActual+'</td> </tr>'+  
+			//'<tr><td><b>Summary:</b> <br>'+objReturn[i].Summary+'</td><td><b>Objective:</b> <br>'+objReturn[i].Objective+'</td></tr>'+  
 			
 			
 			'<tr><td colspan="2" style="text-align:right;"><label ReportId="'+objReturn[i].ReportId+'" ReportDate="'+formattedReportDate+'"  style="margin:10px" class="btn-ss-progress-detail badge badge-info">Detail</label></td></tr>'+  

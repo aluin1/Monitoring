@@ -121,7 +121,7 @@ document.getElementById("data-ss-report-Phase").innerHTML = detailSeismicPhase.j
  
   
  
- 
+ /*
  $$.ajax({
     url: myApp.getWebApi('APPS-GET-Seismic-Report-Activity'),
     method: 'POST',
@@ -209,7 +209,7 @@ $$('.btn-detail-activity').on('click', function () {
       myApp.hidePreloader();
     }
   });
-
+*/
 
  $$.ajax({
     url: myApp.getWebApi('APPS-GET-Seismic-Report-Parameter-Equipment'),
@@ -483,7 +483,7 @@ document.getElementById("data-ss-report-ShotPoint").innerHTML = detailSeismicSho
   });
  
  
- 
+ /*
  $$.ajax({
     url: myApp.getWebApi('APPS-GET-Seismic-Report-Personnel'),
     method: 'POST',
@@ -545,7 +545,7 @@ document.getElementById("data-ss-report-Personnel").innerHTML = detailSeismicPer
       myApp.hidePreloader();
     }
   });
-  
+  */
   
 
  $$.ajax({
@@ -1328,8 +1328,10 @@ $$('.btn-detail-program').on('click', function () {
 				   '<tr><td style="font-size: 12px;"><b>Item Kegiatan:</b><br> <p style="font-size:12px">'+ItemKegiatan+'</p></td><td  style="font-size: 12px;"><b>Rencana Total Point: </b><br><p style="font-size:12px">'+RencanaTotalPoint+'</p></td></tr>'+
                    '<tr><td style="font-size: 12px;"><b>Rencana Total Lingkup:</b><br> <p style="font-size:12px">'+RencanaTotalLingkup+'</p></td><td style="font-size: 12px;" ><b>Progres Harian Total Point:</b><br> <p style="font-size:12px">'+ProgresHarianTotalPoint+'</p></td></tr>'+ 
                     '<tr><td  style="font-size: 12px;"><b>Progres Harian Total Lingkup:</b><br> <p style="font-size:12px">'+ProgresHarianTotalLingkup+'</p></td><td style="font-size: 12px;" ><b>Kumulatif Unit Point:</b><br> <p style="font-size:12px">'+KumulatifUnitPoint+'</p></td></tr>'+ 
-                    '<tr><td  style="font-size: 12px;"><b>Kumulatif Unit Lingkup:</b><br> <p style="font-size:12px">'+KumulatifUnitLingkup+'</p></td><td style="font-size: 12px;" ><b>Percentage:</b><br> <p style="font-size:12px">'+Percentage+'</p></td></tr>'+ 
-                    '<tr><td  style="font-size: 12px;"><b>Personil:</b><br> <p style="font-size:12px">'+Personil+'</p></td><td style="font-size: 12px;" ><b>Kru:</b><br> <p style="font-size:12px">'+Kru+'</p></td></tr>'+ 
+                    '<tr><td style="font-size: 12px;" ><b>Percentage:</b><br> <p style="font-size:12px">'+Percentage+'</p></td><td></td></tr>'+ 
+            //  '<tr><td  style="font-size: 12px;"><b>Personil:</b><br> <p style="font-size:12px">'+Personil+'</p></td><td style="font-size: 12px;" ><b>Kru:</b><br> <p style="font-size:12px">'+Kru+'</p></td></tr>'+ 
+                  // '<tr><td  style="font-size: 12px;"><b>Kumulatif Unit Lingkup:</b><br> <p style="font-size:12px">'+KumulatifUnitLingkup+'</p></td><td style="font-size: 12px;" ><b>Percentage:</b><br> <p style="font-size:12px">'+Percentage+'</p></td></tr>'+ 
+                   // '<tr><td  style="font-size: 12px;"><b>Personil:</b><br> <p style="font-size:12px">'+Personil+'</p></td><td style="font-size: 12px;" ><b>Kru:</b><br> <p style="font-size:12px">'+Kru+'</p></td></tr>'+ 
                   '</table></div>'+
                   '</div>'
   myApp.popup(popupHTML);
