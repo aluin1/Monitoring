@@ -71,7 +71,7 @@ $$.ajax({
 				 '<tbody> '+
 				'<tr style="background:linear-gradient(to right,#63cad4, #047edf);color:#fff;">'+
 				 '<td style="padding:5px;"><b>Phase </b></td>'+
-				 '<td style="padding:5px;"><b>Date </b> </td>'+ 
+				 '<td style="padding:5px;"><b>Date </b> </td>'+  
 				 '</tr>';
 				  
 			 detailSeismicPhase.push(dtlSeismicReportPhase); 
@@ -93,7 +93,7 @@ $$.ajax({
  	
 		  dtlSeismicReportPhase='<tr>'+
 				'<td style="padding:5px;"> '+objReturnReportPhase[i].Phase+'     </td>'+ 
-				'<td style="padding:5px;">'+objReturnReportPhase[i].Date+'       </td> '+ 
+				'<td style="padding:5px;">'+objReturnReportPhase[i].Date+'       </td> '+  
 				  
 				 
 				'</tr> ';
@@ -364,9 +364,10 @@ document.getElementById("data-ss-report-Receiver").innerHTML = detailSeismicRece
 				'<table   width="100%" style="font-size:12px" border="1" >	'+
 				 '<tbody> '+
 				 '<tr style="background:linear-gradient(to right,#63cad4, #047edf);color:#fff;">'+
-				// '<td style="padding:5px;"><b>Number </b></td>'+
-				 '<td style="padding:5px;"><b>Recording Parameter </b> </td>'+
-				 '<td style="padding:5px;"><b>Quantity</b></td>'+ 
+				 // '<td style="padding:5px;"><b>Number </b></td>'+
+				 '<td style="padding:5px;"><b>Parameter Type </b> </td>'+
+				//'<td style="padding:5px;"><b>Parameter Name</b></td>'+ 
+				 '<td style="padding:5px;"><b>Parameter Value</b></td>'+ 
 				 '</tr>';
 				  
 			 detailSeismicRecording.push(dtlSeismicReportRecording); 
@@ -387,9 +388,10 @@ document.getElementById("data-ss-report-Receiver").innerHTML = detailSeismicRece
 			
  	
 		  dtlSeismicReportRecording='<tr>'+
-				//'<td style="padding:5px;text-align:right;"> '+objReturnReportRecording[i].Number+'     </td>'+ 
-				'<td style="padding:5px;">'+objReturnReportRecording[i].RecordingParameter+'       </td> '+
-				'<td style="padding:5px;"> '+objReturnReportRecording[i].Quantity+'       </td>  '+ 
+				// '<td style="padding:5px;text-align:right;"> '+objReturnReportRecording[i].Number+'     </td>'+ 
+				'<td style="padding:5px;">'+objReturnReportRecording[i].ParameterType+'       </td> '+
+				//'<td style="padding:5px;">'+objReturnReportRecording[i].ParameterName+'       </td> '+
+				'<td style="padding:5px;"> '+objReturnReportRecording[i].ParameterValue+'       </td>  '+ 
 				  
 				 
 				'</tr> ';
@@ -1294,7 +1296,7 @@ document.getElementById("data-ss-report-Program").innerHTML = detailSeismicProgr
 	 dtlSeismicProgram='<tr>'+
 				'<td style="padding:5px; "> '+objReturnReportProgram[i].ItemKegiatan+'     </td>'+ 
 				'<td style="padding:5px; "> '+objReturnReportProgram[i].RencanaTotalPoint+'     </td>'+ 
-				'<td style="padding:5px;"> <label class="btn-detail-program badge badge-info" ItemKegiatan="'+objReturnReportProgram[i].ItemKegiatan+'" Problem="'+objReturnReportProgram[i].Problem+'" RencanaTotalPoint="'+objReturnReportProgram[i].RencanaTotalPoint+'" RencanaTotalLingkup="'+objReturnReportProgram[i].RencanaTotalLingkup+'"  ProgresHarianTotalPoint="'+objReturnReportProgram[i].ProgresHarianTotalPoint+'" ProgresHarianTotalLingkup="'+objReturnReportProgram[i].ProgresHarianTotalLingkup+'" KumulatifUnitPoint="'+objReturnReportProgram[i].KumulatifUnitPoint+'" KumulatifUnitLingkup="'+objReturnReportProgram[i].KumulatifUnitLingkup+'" Percentage="'+objReturnReportProgram[i].Percentage+'" Personil="'+objReturnReportProgram[i].Personil+'" Kru="'+objReturnReportProgram[i].Kru+'">Detail</label>  </td> '+ 
+				'<td style="padding:5px;"> <label class="btn-detail-program badge badge-info" ItemKegiatan="'+objReturnReportProgram[i].ItemKegiatan+'" Problem="'+objReturnReportProgram[i].Problem+'" RencanaTotalPoint="'+objReturnReportProgram[i].RencanaTotalPoint+'" RencanaTotalLingkup="'+objReturnReportProgram[i].RencanaTotalLingkup+'"  KumulatifUnitPoint="'+objReturnReportProgram[i].KumulatifUnitPoint+'" KumulatifUnitLingkup="'+objReturnReportProgram[i].KumulatifUnitLingkup+'"  >Detail</label>  </td> '+ 
 				 
 				'</tr> ';		
 			
@@ -1312,12 +1314,12 @@ $$('.btn-detail-program').on('click', function () {
 	   var ItemKegiatan  = $$(this).attr("ItemKegiatan");
 	   var RencanaTotalPoint  = $$(this).attr("RencanaTotalPoint");
 	   var RencanaTotalLingkup  = $$(this).attr("RencanaTotalLingkup");
-	   var ProgresHarianTotalPoint  = $$(this).attr("ProgresHarianTotalPoint"); 
-	   var ProgresHarianTotalLingkup  = $$(this).attr("ProgresHarianTotalLingkup"); 
 	   var KumulatifUnitPoint  = $$(this).attr("KumulatifUnitPoint"); 
 	   var KumulatifUnitLingkup  = $$(this).attr("KumulatifUnitLingkup"); 
-	   var Percentage  = $$(this).attr("Percentage"); 
-	   var Personil  = $$(this).attr("Personil"); 
+	 //  var KumulatifUnitPoint  = $$(this).attr("KumulatifUnitPoint"); 
+	  // var KumulatifUnitLingkup  = $$(this).attr("KumulatifUnitLingkup"); 
+	  //var Percentage  = $$(this).attr("Percentage"); 
+	   //var Personil  = $$(this).attr("Personil"); 
 	   var Kru  = $$(this).attr("Kru");  
 	   
   var popupHTML = '<div class="popup"  style="    background-color: #fff;">'+
@@ -1325,10 +1327,10 @@ $$('.btn-detail-program').on('click', function () {
 					
                       '<p style="margin: 15px 0;" align="right"><a href="#" class="close-popup"><label class="badge badge-danger"> Close</label> </a></p>'+
                    '<table width="100%">'+
-				   '<tr><td style="font-size: 12px;"><b>Item Kegiatan:</b><br> <p style="font-size:12px">'+ItemKegiatan+'</p></td><td  style="font-size: 12px;"><b>Rencana Total Point: </b><br><p style="font-size:12px">'+RencanaTotalPoint+'</p></td></tr>'+
-                   '<tr><td style="font-size: 12px;"><b>Rencana Total Lingkup:</b><br> <p style="font-size:12px">'+RencanaTotalLingkup+'</p></td><td style="font-size: 12px;" ><b>Progres Harian Total Point:</b><br> <p style="font-size:12px">'+ProgresHarianTotalPoint+'</p></td></tr>'+ 
-                    '<tr><td  style="font-size: 12px;"><b>Progres Harian Total Lingkup:</b><br> <p style="font-size:12px">'+ProgresHarianTotalLingkup+'</p></td><td style="font-size: 12px;" ><b>Kumulatif Unit Point:</b><br> <p style="font-size:12px">'+KumulatifUnitPoint+'</p></td></tr>'+ 
-                    '<tr><td style="font-size: 12px;" ><b>Percentage:</b><br> <p style="font-size:12px">'+Percentage+'</p></td><td></td></tr>'+ 
+				   '<tr><td style="font-size: 12px;"><b>Item Kegiatan:</b><br> <p style="font-size:12px">'+ItemKegiatan+'</p></td><td  style="font-size: 12px;"> </td></tr>'+
+                   '<tr><td style="font-size: 12px;"><b>Rencana Total Point:</b><br> <p style="font-size:12px">'+RencanaTotalPoint+'</p></td><td style="font-size: 12px;" ><b>Kumulatif Unit Point:</b><br> <p style="font-size:12px">'+KumulatifUnitPoint+'</p></td></tr>'+ 
+                    '<tr><td  style="font-size: 12px;"><b>Rencana Total Lingkup:</b><br> <p style="font-size:12px">'+RencanaTotalLingkup+'</p></td><td style="font-size: 12px;" ><b>Kumulatif Unit Lingkup:</b><br> <p style="font-size:12px">'+KumulatifUnitLingkup+'</p></td></tr>'+ 
+                  //  '<tr><td style="font-size: 12px;" ><b>Percentage:</b><br> <p style="font-size:12px">'+Percentage+'</p></td><td></td></tr>'+ 
             //  '<tr><td  style="font-size: 12px;"><b>Personil:</b><br> <p style="font-size:12px">'+Personil+'</p></td><td style="font-size: 12px;" ><b>Kru:</b><br> <p style="font-size:12px">'+Kru+'</p></td></tr>'+ 
                   // '<tr><td  style="font-size: 12px;"><b>Kumulatif Unit Lingkup:</b><br> <p style="font-size:12px">'+KumulatifUnitLingkup+'</p></td><td style="font-size: 12px;" ><b>Percentage:</b><br> <p style="font-size:12px">'+Percentage+'</p></td></tr>'+ 
                    // '<tr><td  style="font-size: 12px;"><b>Personil:</b><br> <p style="font-size:12px">'+Personil+'</p></td><td style="font-size: 12px;" ><b>Kru:</b><br> <p style="font-size:12px">'+Kru+'</p></td></tr>'+ 

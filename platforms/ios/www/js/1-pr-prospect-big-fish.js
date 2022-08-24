@@ -9,7 +9,7 @@ myApp.onPageInit("1-pr-prospect-big-fish", function(page){
 
       myApp.hidePreloader();
 
-	/*	 
+	 	 
 $$.ajax({
     url: myApp.getWebApi('APPS-GET-NPR-Prospect-Big-Fish'),
     method: 'POST',
@@ -26,12 +26,12 @@ $$.ajax({
 			 var dtProject='<div class="card   "> <div class="card-body" style="padding: 0px 10px;">'+
 				'<table class="table">	'+
 				'<tbody> '+
-				'<tr class="btn-pr-big-fish"  '+ 
-				'Prebig-fish="'+objReturn[i].Prebig-fish+'"    '+
+				'<tr class="#"  '+ 
+				'Prebig-fish="'+objReturn[i].ProspectBigFish+'"    '+
 				'ProspectId="'+objReturn[i].ProspectId+'"  > '+
 				 
 				'<td style="padding: 10px;"> '+
-				'<b  >'+objReturn[i].Prebig-fish+'  </b></td>'+
+				'<b  >'+objReturn[i].ProspectBigFish+'  </b></td>'+
 				
 				'<td style="font-size:15px;text-align: right;color: #002e66;padding: 10px;"> <span class="mdi mdi-arrow-right-bold-circle-outline" style="font-size: 25px;"></span></td>'+
 				'</tr></tbody></table>'+
@@ -49,13 +49,13 @@ document.getElementById("data-big-fish").innerHTML = dtProjectAllResultFurnellin
 
 $$('.btn-pr-big-fish').on('click', function () {
 	   var ProspectId  = $$(this).attr("ProspectId");
-	   var Prebig-fish  = $$(this).attr("Prebig-fish");
+	   var ProspectBigFish  = $$(this).attr("ProspectBigFish");
 	    
 	console.log(
 		$$(this)
 	);
 	localStorage.setItem('ProspectId', ProspectId); 
-	localStorage.setItem('Prebig-fish', Prebig-fish); 
+	localStorage.setItem('ProspectBigFish', ProspectBigFish); 
 	
 	mainView.router.loadPage('1-pr-pre-big-fish-detail.html');
 });
@@ -72,6 +72,6 @@ $$('.btn-pr-big-fish').on('click', function () {
     }
   });
 	
- */
+ 
  
 }); 

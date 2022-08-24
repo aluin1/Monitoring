@@ -16,6 +16,7 @@ myApp.onPageInit("1-ss-pra-operasi-detail", function(page){
 
  
   
+ var dtWellAllDetailChartProb = [];
 	 
 var OperatorName = localStorage.getItem("OperatorName");
 var ProjectName = localStorage.getItem("ProjectName");
@@ -204,4 +205,66 @@ $$('.btn-seismic-report').on('click', function () {
     }
   });
 	
+	
+	
+	
+
+  $$.ajax({ 
+ type: "POST",
+        url:  myApp.getWebApi('APPS-GET-Seismic-Schedule-Problem'),
+        data: {"txtSeismicId":""+SeismicId+"" } ,
+   
+    timeout: (5 * 60 * 1000),
+    success: function (data, status, xhr) {
+
+      console.log(data);
+      var objReturnPraChartProb = JSON.parse(data);
+
+ 
+ var head='<div class="card ">'+
+              '  <div class="card-body" > '+
+			    
+				'<table class="table">'+
+				'<tr style="background:linear-gradient(to right,#63cad4, #047edf);color:#fff;">'+
+				//'<td>Item</td>'+
+				'	<td>Potensi Kendala</td>'+
+				'<td>Remarks</td>'+
+			 
+				'</tr>';
+	   
+			 dtWellAllDetailChartProb.push(head); 
+		  for (i = 0; i < objReturnPraChartProb.length; i++) { 
+ 
+	
+	   var dtWelldtl2='<tr  >'+
+				//'<td>'+objReturnPraChartProb[i].Item+'</td>'+
+				'<td>'+objReturnPraChartProb[i].PotensiKendala+'</td>'+
+				'<td>'+objReturnPraChartProb[i].Remark+'  </td>'+
+				
+				'</tr>';
+				 
+				
+	   
+	    
+			 dtWellAllDetailChartProb.push(dtWelldtl2); 
+			 
+      myApp.hidePreloader();
+} 
+ var foot='</table>  </div> </div>';
+			 dtWellAllDetailChartProb.push(foot); 
+document.getElementById("data-seismic-pra-problem").innerHTML =dtWellAllDetailChartProb.join(" ");
+ 
+    },
+
+    error: function (xhr, status) {
+      console.log(' failed')
+      myApp.hidePreloader();
+    },
+    complete: function (xhr, status) {
+      myApp.hidePreloader();
+    }
+  });
+ 
+
+
 }); 
