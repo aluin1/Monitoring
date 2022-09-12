@@ -33,7 +33,7 @@ $$.ajax({
 				'<td style="padding: 10px;"> '+
 				'<b  >'+objReturn[i].ProspectBigFish+'  </b></td>'+
 				
-				'<td style="font-size:15px;text-align: right;color: #002e66;padding: 10px;"> <span class="mdi mdi-arrow-right-bold-circle-outline" style="font-size: 25px;"></span></td>'+
+				'<td style="font-size:15px;text-align: right;color: #002e66;padding: 10px;">  </td>'+
 				'</tr></tbody></table>'+
 				'</div></div>';
 				 
