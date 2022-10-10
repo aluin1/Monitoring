@@ -31,11 +31,11 @@ $$(".btnlogin").on("click", function(){
 		
 		 
  $.ajax({
-    //  url: "https://apps.pertamina.com/api/loginprod/Users/loginLDAP/",
-	
-   url: "https://apps.pertamina.com/api/login/Users/loginLDAP",
+    //url: "https://apps.pertamina.com/api/loginprod/Users/loginLDAP/",
+	url: "https://apps.pertamina.com/api/login/Users/loginLDAP",
+	//url: "https://apps.pepc.pertamina.com/APINetdev/auth/loginLDAP",
     type: "POST",
-    data:' {"username" : "'+strUsername.trim()+'"  ,  "password" : "'+strPass+'"}' ,
+    data:' {"username" : "'+strUsername.trim()+'"  ,  "password" : "'+strPass+'",  "appName" : "Exploration Dashboard Monitoring"}' ,
     
     success: function (data) {
        // callback(data);
